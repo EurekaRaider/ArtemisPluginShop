@@ -1,10 +1,6 @@
 <div align="center">
 
-<p>
-  <img src="./plugins/google-workspace/assets/icon.png" width="76" alt="Google Workspace plugin icon" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="./plugins/gmail/assets/icon.png" width="76" alt="Gmail plugin icon" />
-</p>
+<img src="./assets/artemis-plugin-shop-icon.png" width="92" alt="Artemis Plugin Shop brand icon" />
 
 # Artemis Plugin Shop
 
@@ -50,6 +46,8 @@ Artemis Plugin Shop is an independent marketplace for
 [Artemis](https://github.com/williamjinj-eng/Artemis). Artemis does not bundle,
 register or preconfigure this repository. Nothing is downloaded or shown until
 the user explicitly adds its GitHub address or imports a signed offline package.
+Its brand mark keeps the Artemis crescent and adds a small plug in the
+lower-right corner to identify an Artemis plugin marketplace.
 
 <table>
   <tr>
@@ -57,7 +55,7 @@ the user explicitly adds its GitHub address or imports a signed offline package.
       <h3>Explicit distribution</h3>
       <p><strong>Online and offline installation are both initiated by the local user.</strong></p>
       <ul>
-        <li>Add the public GitHub <code>owner/repository</code> address when the machine is connected.</li>
+        <li>Add the GitHub <code>owner/repository</code> address when the machine is connected.</li>
         <li>Download a signed archive elsewhere and import it into Artemis on an offline machine.</li>
         <li>Startup, browsing, search and installation read the validated Artemis cache.</li>
         <li>Offline sources are updated by importing a newer package, not by silently contacting GitHub.</li>
@@ -262,6 +260,7 @@ Google account revokes and removes all Google credentials.
 ```text
 .agents/plugins/marketplace.json       marketplace catalog
 .artemis/integrity.json                public signed integrity declaration
+assets/artemis-plugin-shop-icon.png    Artemis plugin-marketplace brand mark
 plugins/google-workspace/              installable Workspace plugin
 plugins/gmail/                         installable Gmail plugin
 src/                                   greenfield TypeScript implementation
