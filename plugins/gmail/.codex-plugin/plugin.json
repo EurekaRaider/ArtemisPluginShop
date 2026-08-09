@@ -1,0 +1,30 @@
+{
+  "name": "gmail",
+  "version": "0.1.0",
+  "description": "Search, read, draft, send, organize, trash, and restore Gmail messages through the direct Gmail API.",
+  "author": {
+    "name": "Artemis contributors",
+    "url": "https://github.com/williamjinj-eng"
+  },
+  "homepage": "https://github.com/williamjinj-eng/ArtemisPluginShop",
+  "repository": "https://github.com/williamjinj-eng/ArtemisPluginShop",
+  "license": "MIT",
+  "keywords": ["google", "gmail", "email", "mail"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gmail",
+    "shortDescription": "Read, draft, send, and organize Gmail.",
+    "longDescription": "Direct Gmail tools for threads, attachments, drafts, sending, labels, archive, trash, and restore without permanent-delete or account-setting access.",
+    "developerName": "Artemis contributors",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Send", "OAuth", "Direct Gmail API"],
+    "defaultPrompt": [
+      "Summarize important unread email from this week.",
+      "Draft a reply to the latest message in this thread.",
+      "Archive completed threads and apply a label."
+    ],
+    "brandColor": "#EA4335",
+    "logo": "./assets/icon.png"
+  },
+  "mcpServers": "./.mcp.json"
+}

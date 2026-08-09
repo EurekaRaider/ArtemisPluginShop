@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "google-workspace": {
+      "type": "stdio",
+      "command": "${ARTEMIS_NODE}",
+      "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
+      "x-artemis": {
+        "auth": {
+          "provider": "google",
+          "grant": "google-workspace",
+          "scopes": [
+            "openid",
+            "email",
+            "profile",
+            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/calendar"
+          ]
+        }
+      }
+    }
+  }
+}

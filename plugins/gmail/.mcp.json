@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "gmail": {
+      "type": "stdio",
+      "command": "${ARTEMIS_NODE}",
+      "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
+      "x-artemis": {
+        "auth": {
+          "provider": "google",
+          "grant": "gmail",
+          "scopes": [
+            "openid",
+            "email",
+            "profile",
+            "https://www.googleapis.com/auth/gmail.modify"
+          ]
+        }
+      }
+    }
+  }
+}

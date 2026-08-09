@@ -1,0 +1,32 @@
+{
+  "name": "artemis-plugin-shop",
+  "interface": {
+    "displayName": "Artemis Plugin Shop"
+  },
+  "plugins": [
+    {
+      "name": "google-workspace",
+      "source": {
+        "source": "local",
+        "path": "./plugins/google-workspace"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "gmail",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gmail"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

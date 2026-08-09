@@ -1,0 +1,41 @@
+{
+  "name": "artemis-plugin-shop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "External Git marketplace for signed Artemis plugins.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williamjinj-eng/ArtemisPluginShop.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/generate-icons.mjs && node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "sign": "node scripts/sign-integrity.mjs",
+    "verify": "node scripts/verify-marketplace.mjs",
+    "package:offline": "npm run verify && node scripts/package-offline.mjs",
+    "verify:offline": "node scripts/verify-offline-package.mjs",
+    "smoke:runtime": "node scripts/smoke-runtime.mjs",
+    "smoke:runtime:arm64": "node scripts/smoke-runtime.mjs --require-arm64",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm test && npm run build && npm run verify && npm run smoke:runtime && npm run package:offline && npm run verify:offline && npm run format:check"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "esbuild": "0.28.1",
+    "prettier": "3.9.6",
+    "tar": "7.5.22",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

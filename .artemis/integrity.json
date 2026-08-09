@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "marketplaceName": "artemis-plugin-shop",
+  "marketplaceHash": "7d67f25fc749b73cf9e118797b989690cb7b84437aee5f356052d74fafb1a209",
+  "signatureAlgorithm": "Ed25519",
+  "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
+  "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
+  "signedAt": "2026-08-09T07:13:28.546Z",
+  "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
+  "plugins": [
+    {
+      "name": "gmail",
+      "version": "0.1.0",
+      "contentHash": "628db262bb55b4eb482beaba8b667963edc1762edf2fe934610cd7d20aa86d33",
+      "size": 1070407,
+      "files": [
+        {
+          "path": ".codex-plugin/plugin.json",
+          "size": 1246,
+          "sha256": "900155157802cc11d2378f8d7df18d6ff8aad09ed2a5beadd3c22a1a0ae4453c"
+        },
+        {
+          "path": ".mcp.json",
+          "size": 435,
+          "sha256": "e1352f5538bb1e8c157efa904dbfa9f8406eeba41183c5969c13ca6fee90be6f"
+        },
+        {
+          "path": "assets/icon.png",
+          "size": 1539,
+          "sha256": "2f6c964eb43815377ef897bad65a6441e3b88028947a27c9d9bd4f0d3ae472d8"
+        },
+        {
+          "path": "assets/icon.svg",
+          "size": 364,
+          "sha256": "d86a08ec323a8f406be085f90f14ab6fce0632f3d96471495dd861a81075b6e0"
+        },
+        {
+          "path": "runtime/server.mjs",
+          "size": 1065667,
+          "sha256": "554185ceba8252e0581b5e92a1ee9ca3ee6e73ed7c0ed791ce36ea1d6302e8ec"
+        },
+        {
+          "path": "skills/gmail/SKILL.md",
+          "size": 1156,
+          "sha256": "a1e18ab1f80a787e3ae379e7014c81b5757a64039d5f5a0bb844ce561d8bdb36"
+        }
+      ]
+    },
+    {
+      "name": "google-workspace",
+      "version": "0.1.0",
+      "contentHash": "a59fd59fbfa51e4f0a4813cbbf58201c894177a527dd538a14f9af27ce7a849c",
+      "size": 1072357,
+      "files": [
+        {
+          "path": ".codex-plugin/plugin.json",
+          "size": 1327,
+          "sha256": "446816e3ef84c9af027f714f9b614ec192888e72baf8a01129c17fbf4c66adab"
+        },
+        {
+          "path": ".mcp.json",
+          "size": 506,
+          "sha256": "882c6044176945db0f8a5e3a72dd26c3cc211a2be00dbfea9707c5e8fef85fdd"
+        },
+        {
+          "path": "assets/icon.png",
+          "size": 1179,
+          "sha256": "0d9e7b9dea6453ef3d105db97f03e35d4bf8e52cf4b96b10fc904dce00417907"
+        },
+        {
+          "path": "assets/icon.svg",
+          "size": 345,
+          "sha256": "5b2c2865ea93c76442f3381c3e4a30fa9521ce7465c3f9e9cd4ec028ba8e05ad"
+        },
+        {
+          "path": "runtime/server.mjs",
+          "size": 1067740,
+          "sha256": "a9106a766edc7e910ea358f08ebb3f9b9ab6eb2cede4a152ecce67c0cd95d342"
+        },
+        {
+          "path": "skills/google-workspace/SKILL.md",
+          "size": 1260,
+          "sha256": "eebcc6899ec58919071dbd9a5bb14ef587070416b660696bd64e508cb8cb39c0"
+        }
+      ]
+    }
+  ],
+  "signature": "Q2YRxj8lD6wzDyxlKbBLSgF0Mkgx0kIQqAUcMJePgcQjkhoOdf5cTBLJ1AgOWKhqNkSRF6dNpv4fWIC7SiyTBA=="
+}
