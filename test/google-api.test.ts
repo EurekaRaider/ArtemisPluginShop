@@ -13,7 +13,6 @@ describe("Google API transport", () => {
     vi.stubGlobal("fetch", fetchMock);
     const api = new GoogleApi({
       accessToken: "access-token-long-enough-for-test",
-      config: {},
     });
     await expect(
       api.json("https://example.invalid", {}, { readOnly: true }),
@@ -28,7 +27,6 @@ describe("Google API transport", () => {
     vi.stubGlobal("fetch", fetchMock);
     const api = new GoogleApi({
       accessToken: "access-token-long-enough-for-test",
-      config: {},
     });
     await expect(
       api.json("https://example.invalid", { method: "POST" }),

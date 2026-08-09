@@ -21,7 +21,7 @@ import {
 } from "../shared/local-files.js";
 
 const GMAIL_ROOT = "https://gmail.googleapis.com/gmail/v1/users/me";
-const server = new McpServer({ name: "Artemis Gmail", version: "1.0.0" });
+const server = new McpServer({ name: "Artemis Gmail", version: "0.1.1" });
 
 type ToolExtra = { _meta?: Record<string, unknown>; signal: AbortSignal };
 type Header = { name?: string; value?: string };

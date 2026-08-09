@@ -1,6 +1,6 @@
 {
   "name": "gmail",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Search, read, draft, send, organize, trash, and restore Gmail messages through the direct Gmail API.",
   "author": {
     "name": "Artemis contributors",

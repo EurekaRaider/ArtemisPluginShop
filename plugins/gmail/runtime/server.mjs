@@ -29029,7 +29029,6 @@ var StdioServerTransport = class {
 // src/shared/artemis-auth.ts
 var ARTEMIS_ACCESS_TOKEN_META = "com.artemis.google/access-token";
 var ARTEMIS_ACCOUNT_EMAIL_META = "com.artemis.google/account-email";
-var ARTEMIS_GOOGLE_CONFIG_META = "com.artemis.google/config";
 function readArtemisAuth(meta) {
   const accessToken = meta?.[ARTEMIS_ACCESS_TOKEN_META];
   if (typeof accessToken !== "string" || accessToken.length < 20) {
@@ -29038,26 +29037,10 @@ function readArtemisAuth(meta) {
     );
   }
   const accountEmail = meta?.[ARTEMIS_ACCOUNT_EMAIL_META];
-  const rawConfig = meta?.[ARTEMIS_GOOGLE_CONFIG_META];
-  const config2 = isRecord(rawConfig) ? rawConfig : {};
   return {
     accessToken,
-    accountEmail: typeof accountEmail === "string" ? accountEmail : void 0,
-    config: {
-      driveRootIds: stringArray(config2.driveRootIds),
-      calendarIds: stringArray(config2.calendarIds)
-    }
+    accountEmail: typeof accountEmail === "string" ? accountEmail : void 0
   };
-}
-function stringArray(value) {
-  if (!Array.isArray(value)) return void 0;
-  const result = value.filter(
-    (entry) => typeof entry === "string" && entry.length > 0
-  );
-  return result.length > 0 ? [...new Set(result)] : void 0;
-}
-function isRecord(value) {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 // src/shared/google-api.ts
@@ -29292,7 +29275,7 @@ function workspacePath(path) {
 
 // src/gmail/server.ts
 var GMAIL_ROOT = "https://gmail.googleapis.com/gmail/v1/users/me";
-var server = new McpServer({ name: "Artemis Gmail", version: "1.0.0" });
+var server = new McpServer({ name: "Artemis Gmail", version: "0.1.1" });
 var mailboxSchema = external_exports3.object({
   name: external_exports3.string().optional(),
   email: external_exports3.string().email()

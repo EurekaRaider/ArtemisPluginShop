@@ -1,7 +1,7 @@
 {
   "name": "google-workspace",
-  "version": "0.1.0",
-  "description": "Operate selected Google Drive folder trees, Docs, Sheets, Slides, and approved calendars through direct Google APIs.",
+  "version": "0.1.1",
+  "description": "Operate Google Drive, Docs, Sheets, Slides, and Calendar resources available to the connected Google account through direct Google APIs.",
   "author": {
     "name": "Artemis contributors",
     "url": "https://github.com/williamjinj-eng"
@@ -21,15 +21,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Google Workspace",
-    "shortDescription": "Work with approved Drive roots and calendars.",
-    "longDescription": "Direct Google Drive, Docs, Sheets, Slides, and Calendar tools with a locally enforced Drive root allowlist and risk-aware writes.",
+    "shortDescription": "Work with accessible Drive and Calendar data.",
+    "longDescription": "Direct Google Drive, Docs, Sheets, Slides, and Calendar tools that follow the connected account's Google permissions, with risk-aware writes.",
     "developerName": "Artemis contributors",
     "category": "Productivity",
     "capabilities": ["Read", "Write", "OAuth", "Direct Google APIs"],
     "defaultPrompt": [
-      "Find a document in my approved Drive folders.",
-      "Append these rows to an approved Google Sheet.",
-      "Show my upcoming events on approved calendars."
+      "Find a document I can access in Google Drive.",
+      "Append these rows to a Google Sheet I can edit.",
+      "Show my upcoming events from an accessible calendar."
     ],
     "brandColor": "#4285F4",
     "logo": "./assets/icon.png"

@@ -11,6 +11,7 @@ self-contained runtimes, Artemis-hosted OAuth and an offline distribution path.*
 
 <p>
   <img alt="External marketplace" src="https://img.shields.io/badge/Marketplace-external-2088FF" />
+  <img alt="Version 0.1.1" src="https://img.shields.io/badge/Version-v0.1.1-4C8BF5" />
   <img alt="Ed25519 integrity" src="https://img.shields.io/badge/Integrity-Ed25519-8257E5" />
   <img alt="Manual releases" src="https://img.shields.io/badge/Releases-manual-F5A524" />
   <img alt="Two plugins" src="https://img.shields.io/badge/Plugins-2-2EA44F" />
@@ -78,7 +79,7 @@ lower-right corner to identify an Artemis plugin marketplace.
   <tr>
     <td width="50%" valign="top">
       <p><strong>01</strong>&nbsp;&nbsp;/&nbsp;&nbsp;GOOGLE WORKSPACE</p>
-      <p>Drive, Docs, Sheets, Slides and Calendar through their official Google REST APIs, with a locally enforced Drive-root and Calendar allowlist.</p>
+      <p>Drive, Docs, Sheets, Slides and Calendar through their official Google REST APIs, limited to resources available to the connected Google account.</p>
     </td>
     <td width="50%" valign="top">
       <p><strong>02</strong>&nbsp;&nbsp;/&nbsp;&nbsp;GMAIL</p>
@@ -161,16 +162,15 @@ browsing or installing the offline marketplace.
 
 ### Artemis owns OAuth; plugins use per-call access tokens
 
-The plugins do not read Chrome or Safari cookies. The user imports a Google
-Cloud **Desktop app** OAuth client into Artemis once. Artemis opens the system
-browser, uses PKCE, random `state`, a temporary `127.0.0.1` callback and
-operating-system encrypted storage.
+The plugins do not read Chrome or Safari cookies. Artemis ships its own Google
+Cloud **Desktop app** OAuth client as an application-level build resource.
+Users authorize in the system browser; Artemis uses PKCE, random `state`, a
+temporary `127.0.0.1` callback and operating-system encrypted token storage.
 
-1. Enable the required Google APIs in the user's Google Cloud project.
-2. Configure the OAuth consent screen and create a Desktop app client.
-3. Import the downloaded client JSON in **Artemis → Google account**.
-4. Authorize Workspace and Gmail separately for the same Google identity.
-5. Configure Drive roots and any non-primary Calendar IDs before enabling Workspace.
+1. The Artemis publisher enables the required Google APIs and configures the OAuth consent screen.
+2. The Artemis release build includes its dedicated Desktop app client outside public Git history.
+3. Users authorize Workspace and Gmail separately for the same Google identity.
+4. The plugin can use only Drive and Calendar resources available to the connected Google account.
 
 <table>
   <tr>
@@ -179,7 +179,7 @@ operating-system encrypted storage.
       <pre><code>openid email profile
 https://www.googleapis.com/auth/drive
 https://www.googleapis.com/auth/calendar</code></pre>
-      <p>Drive access is account-wide at Google. Artemis and the plugin revalidate the configured root-folder boundary, shortcut target and Shared Drive parent chain before each operation.</p>
+      <p>Google applies the connected account's file, folder, Shared Drive and sharing permissions to every Drive API request.</p>
     </td>
     <td width="50%" valign="top">
       <p><strong>GMAIL GRANT</strong></p>
@@ -191,7 +191,7 @@ https://www.googleapis.com/auth/gmail.modify</code></pre>
 </table>
 
 > [!WARNING]
-> Full Drive, Calendar and `gmail.modify` access can require Google OAuth verification for public production use. The local folder boundary narrows plugin behavior; it does not narrow the scope granted by Google.
+> Full Drive, Calendar and `gmail.modify` access can require Google OAuth verification for public production use. Google permissions still determine which resources the connected account can read or modify.
 
 <br />
 
@@ -203,13 +203,12 @@ https://www.googleapis.com/auth/gmail.modify</code></pre>
 <summary><strong>Drive, Docs, Sheets, Slides and Calendar</strong></summary>
 
 - **Drive** — search, metadata, upload, download, folder creation, copy, move,
-  rename, trash and restore. New parents, existing parent chains, shortcuts and
-  Shared Drive targets remain inside configured roots.
+  rename, trash and restore for resources available to the connected account.
 - **Docs** — read, create and structured batch updates.
 - **Sheets** — read ranges, create spreadsheets, update, append and clear.
 - **Slides** — read, create and structured batch updates.
-- **Calendar** — list, read, create, update and cancel events. The primary
-  calendar is available by default; additional calendars must be enabled by ID.
+- **Calendar** — list, read, create, update and cancel events on calendars the
+  connected account can access.
 
 </details>
 
@@ -236,15 +235,15 @@ https://www.googleapis.com/auth/gmail.modify</code></pre>
 
 ### Signed content, host-owned credentials and bounded retries
 
-| Boundary             | Contract                                                                                                                                                     |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Marketplace identity | `.artemis/integrity.json` binds the marketplace name, public GitHub source, key fingerprint, manifest hash and plugin file hashes.                           |
-| Offline archive      | Only the signed manifest, public integrity declaration and exact signed plugin files are accepted. Extra files, links and unsafe paths are rejected.         |
-| Runtime              | `${ARTEMIS_NODE}` resolves to the Artemis Electron executable with `ELECTRON_RUN_AS_NODE=1`; plugin installation runs no package manager.                    |
-| Google credentials   | OAuth clients and refresh tokens stay in Artemis `safeStorage`; the MCP receives only a short-lived access token in private `tools/call` metadata.           |
-| Logging              | Access and refresh tokens must not enter model arguments, application logs or diagnostic archives.                                                           |
-| Retries              | Read-only calls may retry transient `429`/`5xx` responses. Non-idempotent writes are not automatically retried.                                              |
-| Lifecycle            | Newly installed Google plugins remain disabled until their grant and Workspace boundary are complete. Added scopes disable the plugin until reauthorization. |
+| Boundary             | Contract                                                                                                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Marketplace identity | `.artemis/integrity.json` binds the marketplace name, public GitHub source, key fingerprint, manifest hash and plugin file hashes.                                             |
+| Offline archive      | Only the signed manifest, public integrity declaration and exact signed plugin files are accepted. Extra files, links and unsafe paths are rejected.                           |
+| Runtime              | `${ARTEMIS_NODE}` resolves to the Artemis Electron executable with `ELECTRON_RUN_AS_NODE=1`; plugin installation runs no package manager.                                      |
+| Google credentials   | The application OAuth client ships with Artemis; user refresh tokens stay in `safeStorage`. The MCP receives only a short-lived access token in private `tools/call` metadata. |
+| Logging              | Access and refresh tokens must not enter model arguments, application logs or diagnostic archives.                                                                             |
+| Retries              | Read-only calls may retry transient `429`/`5xx` responses. Non-idempotent writes are not automatically retried.                                                                |
+| Lifecycle            | Newly installed Google plugins remain disabled until their grant is complete. Revoked grants or added scopes require authorization again.                                      |
 
 Removing a marketplace removes its source record and cache but does not
 automatically uninstall installed plugins. Removing one Google plugin deletes
@@ -265,7 +264,7 @@ plugins/google-workspace/              installable Workspace plugin
 plugins/gmail/                         installable Gmail plugin
 src/                                   greenfield TypeScript implementation
 scripts/                               build, sign, verify and package tools
-test/                                  API boundary and security tests
+test/                                  API access and security tests
 dist/                                  ignored manual offline-package output
 ```
 
@@ -279,9 +278,9 @@ npm install
 npm run check
 ```
 
-`npm run build` regenerates both self-contained MCP runtimes and deterministic
-PNG icons. After changing any marketplace or plugin file, sign the exact output
-with a securely stored Ed25519 key:
+`npm run build` regenerates both self-contained MCP runtimes. The checked-in SVG
+and PNG brand assets are included unchanged. After changing any marketplace or
+plugin file, sign the exact output with a securely stored Ed25519 key:
 
 ```bash
 ARTEMIS_MARKETPLACE_SIGNING_KEY=/secure/path/ed25519-private-key.pem npm run sign
@@ -321,8 +320,8 @@ workflow.
 ### Remaining release acceptance
 
 - Real Google OAuth and API operations with a controlled test account.
-- Packaged Artemis UI import and plugin lifecycle on macOS arm64 and x64.
-- Native Windows x64 package, import, authorization and API acceptance.
+- Packaged Artemis browser authorization and plugin lifecycle on macOS arm64 and x64.
+- Native Windows x64 package, authorization and API acceptance.
 - Google production OAuth verification, Developer ID signing and notarization
   where required by the intended distribution model.
 

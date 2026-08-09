@@ -4,11 +4,11 @@ import { z } from "zod";
 
 import { readArtemisAuth } from "../shared/artemis-auth.js";
 import {
-  DriveBoundary,
+  DriveAccess,
   driveFilesEndpoint,
   googleFolderMimeType,
   type DriveFile,
-} from "../shared/drive-boundary.js";
+} from "../shared/drive-access.js";
 import {
   GoogleApi,
   googleJsonBody,
@@ -22,7 +22,7 @@ import {
 
 const server = new McpServer({
   name: "Artemis Google Workspace",
-  version: "1.0.0",
+  version: "0.1.1",
 });
 
 type ToolExtra = { _meta?: Record<string, unknown>; signal: AbortSignal };
@@ -30,27 +30,19 @@ type ToolExtra = { _meta?: Record<string, unknown>; signal: AbortSignal };
 function context(extra: ToolExtra) {
   const auth = readArtemisAuth(extra._meta);
   const api = new GoogleApi(auth, extra.signal);
-  return { auth, api, drive: new DriveBoundary(api, auth) };
+  return { auth, api, drive: new DriveAccess(api) };
 }
 
-function assertCalendarAllowed(
-  calendarId: string,
-  extra: ToolExtra,
-): GoogleApi {
+function calendarApi(extra: ToolExtra): GoogleApi {
   const auth = readArtemisAuth(extra._meta);
-  const api = new GoogleApi(auth, extra.signal);
-  const allowed = new Set(["primary", ...(auth.config.calendarIds ?? [])]);
-  if (!allowed.has(calendarId)) {
-    throw new Error(`Calendar ${calendarId} is not enabled in Artemis.`);
-  }
-  return api;
+  return new GoogleApi(auth, extra.signal);
 }
 
 server.registerTool(
   "google_workspace_status",
   {
     description:
-      "Show the Google account and local Workspace boundaries supplied by Artemis.",
+      "Show the Google account supplied by Artemis and its access model.",
     inputSchema: {},
     annotations: { readOnlyHint: true, destructiveHint: false },
   },
@@ -59,10 +51,8 @@ server.registerTool(
     return textResult({
       connected: true,
       accountEmail: auth.accountEmail,
-      driveRootIds: auth.config.driveRootIds ?? [],
-      calendarIds: ["primary", ...(auth.config.calendarIds ?? [])],
       notice:
-        "Google grants full Drive access; this plugin enforces the listed roots locally on every call.",
+        "Drive and Calendar access follows the connected Google account's permissions and granted OAuth scopes.",
     });
   },
 );
@@ -71,7 +61,7 @@ server.registerTool(
   "gdrive_search",
   {
     description:
-      "Search Drive, returning only items whose current parent chain is inside an enabled root.",
+      "Search Drive items accessible to the connected Google account.",
     inputSchema: {
       query: z
         .string()
@@ -85,7 +75,7 @@ server.registerTool(
     annotations: { readOnlyHint: true, destructiveHint: false },
   },
   async ({ query, pageSize, pageToken }, extra) => {
-    const { api, drive } = context(extra);
+    const { api } = context(extra);
     const url = withQuery(driveFilesEndpoint, {
       q: query,
       pageSize,
@@ -101,28 +91,22 @@ server.registerTool(
       nextPageToken?: string;
       files?: DriveFile[];
     }>(url, {}, { readOnly: true });
-    const files: DriveFile[] = [];
-    for (const file of page.files ?? []) {
-      try {
-        await drive.assertAllowed(file.id);
-        files.push(file);
-      } catch {
-        // Search is intentionally filtered to the configured boundary.
-      }
-    }
-    return textResult({ files, nextPageToken: page.nextPageToken });
+    return textResult({
+      files: page.files ?? [],
+      nextPageToken: page.nextPageToken,
+    });
   },
 );
 
 server.registerTool(
   "gdrive_get",
   {
-    description: "Read metadata for a Drive item inside an enabled root.",
+    description: "Read metadata for an accessible Drive item.",
     inputSchema: { fileId: z.string().min(1) },
     annotations: { readOnlyHint: true, destructiveHint: false },
   },
   async ({ fileId }, extra) =>
-    textResult(await context(extra).drive.assertAllowed(fileId)),
+    textResult(await context(extra).drive.assertAccessible(fileId)),
 );
 
 server.registerTool(
@@ -147,7 +131,7 @@ server.registerTool(
   },
   async ({ fileId, outputPath, exportMimeType }, extra) => {
     const { api, drive } = context(extra);
-    const file = await drive.assertAllowed(fileId);
+    const file = await drive.assertAccessible(fileId);
     const isGoogleFile =
       file.mimeType?.startsWith("application/vnd.google-apps.") === true;
     if (isGoogleFile && !exportMimeType)
@@ -170,7 +154,7 @@ server.registerTool(
 server.registerTool(
   "gdrive_upload",
   {
-    description: "Upload a workspace file into an enabled Drive folder.",
+    description: "Upload a workspace file into an accessible Drive folder.",
     inputSchema: {
       localPath: z.string().min(1),
       parentId: z.string().min(1),
@@ -185,7 +169,7 @@ server.registerTool(
   },
   async ({ localPath, parentId, name, mimeType }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowedFolder(parentId);
+    await drive.assertAccessibleFolder(parentId);
     const bytes = await readWorkspaceFile(localPath);
     const boundary = `artemis-${crypto.randomUUID()}`;
     const body = new Blob([
@@ -212,7 +196,7 @@ server.registerTool(
 server.registerTool(
   "gdrive_create_folder",
   {
-    description: "Create a folder in an enabled Drive folder.",
+    description: "Create a folder in an accessible Drive folder.",
     inputSchema: { parentId: z.string().min(1), name: z.string().min(1) },
     annotations: {
       readOnlyHint: false,
@@ -222,7 +206,7 @@ server.registerTool(
   },
   async ({ parentId, name }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowedFolder(parentId);
+    await drive.assertAccessibleFolder(parentId);
     const url = withQuery(driveFilesEndpoint, {
       supportsAllDrives: true,
       fields: "id,name,mimeType,parents,driveId,webViewLink",
@@ -243,7 +227,7 @@ server.registerTool(
 server.registerTool(
   "gdrive_copy",
   {
-    description: "Copy a Drive file into an enabled folder.",
+    description: "Copy a Drive file into an accessible folder.",
     inputSchema: {
       fileId: z.string().min(1),
       parentId: z.string().min(1),
@@ -258,8 +242,8 @@ server.registerTool(
   async ({ fileId, parentId, name }, extra) => {
     const { api, drive } = context(extra);
     await Promise.all([
-      drive.assertAllowed(fileId),
-      drive.assertAllowedFolder(parentId),
+      drive.assertAccessible(fileId),
+      drive.assertAccessibleFolder(parentId),
     ]);
     const url = withQuery(
       `${driveFilesEndpoint}/${encodeURIComponent(fileId)}/copy`,
@@ -280,7 +264,7 @@ server.registerTool(
 server.registerTool(
   "gdrive_move",
   {
-    description: "Move a Drive item to another enabled folder.",
+    description: "Move a Drive item to another accessible folder.",
     inputSchema: { fileId: z.string().min(1), parentId: z.string().min(1) },
     annotations: {
       readOnlyHint: false,
@@ -291,8 +275,8 @@ server.registerTool(
   async ({ fileId, parentId }, extra) => {
     const { api, drive } = context(extra);
     const [file] = await Promise.all([
-      drive.assertAllowed(fileId),
-      drive.assertAllowedFolder(parentId),
+      drive.assertAccessible(fileId),
+      drive.assertAccessibleFolder(parentId),
     ]);
     const url = withQuery(
       `${driveFilesEndpoint}/${encodeURIComponent(fileId)}`,
@@ -312,7 +296,7 @@ server.registerTool(
 server.registerTool(
   "gdrive_rename",
   {
-    description: "Rename a Drive item inside an enabled root.",
+    description: "Rename an accessible Drive item.",
     inputSchema: { fileId: z.string().min(1), name: z.string().min(1) },
     annotations: {
       readOnlyHint: false,
@@ -322,7 +306,7 @@ server.registerTool(
   },
   async ({ fileId, name }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowed(fileId);
+    await drive.assertAccessible(fileId);
     const url = withQuery(
       `${driveFilesEndpoint}/${encodeURIComponent(fileId)}`,
       {
@@ -353,7 +337,7 @@ for (const [name, trashed, description] of [
     },
     async ({ fileId }, extra) => {
       const { api, drive } = context(extra);
-      await drive.assertAllowed(fileId);
+      await drive.assertAccessible(fileId);
       const url = withQuery(
         `${driveFilesEndpoint}/${encodeURIComponent(fileId)}`,
         {
@@ -391,13 +375,13 @@ function registerGoogleFileTools(
   server.registerTool(
     `${prefix}_read`,
     {
-      description: `Read a Google ${singular} inside an enabled Drive root.`,
+      description: `Read an accessible Google ${singular}.`,
       inputSchema: { fileId: z.string().min(1) },
       annotations: { readOnlyHint: true, destructiveHint: false },
     },
     async ({ fileId }, extra) => {
       const { api, drive } = context(extra);
-      await drive.assertAllowed(fileId);
+      await drive.assertAccessible(fileId);
       return textResult(
         await api.json(
           `${apiRoot}/${encodeURIComponent(fileId)}`,
@@ -411,7 +395,7 @@ function registerGoogleFileTools(
   server.registerTool(
     `${prefix}_create`,
     {
-      description: `Create a Google ${singular} in an enabled Drive folder.`,
+      description: `Create a Google ${singular} in an accessible Drive folder.`,
       inputSchema: { parentId: z.string().min(1), title: z.string().min(1) },
       annotations: {
         readOnlyHint: false,
@@ -421,7 +405,7 @@ function registerGoogleFileTools(
     },
     async ({ parentId, title }, extra) => {
       const { api, drive } = context(extra);
-      await drive.assertAllowedFolder(parentId);
+      await drive.assertAccessibleFolder(parentId);
       const url = withQuery(driveFilesEndpoint, {
         supportsAllDrives: true,
         fields: "id,name,mimeType,parents,driveId,webViewLink",
@@ -451,7 +435,7 @@ function registerGoogleFileTools(
     },
     async ({ fileId, requests }, extra) => {
       const { api, drive } = context(extra);
-      await drive.assertAllowed(fileId);
+      await drive.assertAccessible(fileId);
       return textResult(
         await api.json(`${apiRoot}/${encodeURIComponent(fileId)}:batchUpdate`, {
           method: "POST",
@@ -466,7 +450,7 @@ server.registerTool(
   "gsheets_read",
   {
     description:
-      "Read metadata or a value range from a Google Sheet in an enabled Drive root.",
+      "Read metadata or a value range from an accessible Google Sheet.",
     inputSchema: {
       spreadsheetId: z.string().min(1),
       range: z.string().optional(),
@@ -475,7 +459,7 @@ server.registerTool(
   },
   async ({ spreadsheetId, range }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowed(spreadsheetId);
+    await drive.assertAccessible(spreadsheetId);
     const url = range
       ? withQuery(
           `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}/values/${encodeURIComponent(range)}`,
@@ -494,7 +478,7 @@ server.registerTool(
 server.registerTool(
   "gsheets_create",
   {
-    description: "Create a Google Sheet in an enabled Drive folder.",
+    description: "Create a Google Sheet in an accessible Drive folder.",
     inputSchema: { parentId: z.string().min(1), title: z.string().min(1) },
     annotations: {
       readOnlyHint: false,
@@ -504,7 +488,7 @@ server.registerTool(
   },
   async ({ parentId, title }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowedFolder(parentId);
+    await drive.assertAccessibleFolder(parentId);
     const url = withQuery(driveFilesEndpoint, {
       supportsAllDrives: true,
       fields: "id,name,mimeType,parents,driveId,webViewLink",
@@ -545,7 +529,7 @@ for (const operation of ["update", "append"] as const) {
     },
     async ({ spreadsheetId, range, values, valueInputOption }, extra) => {
       const { api, drive } = context(extra);
-      await drive.assertAllowed(spreadsheetId);
+      await drive.assertAccessible(spreadsheetId);
       const url = withQuery(
         `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}/values/${encodeURIComponent(range)}${operation === "append" ? ":append" : ""}`,
         { valueInputOption },
@@ -573,7 +557,7 @@ server.registerTool(
   },
   async ({ spreadsheetId, range }, extra) => {
     const { api, drive } = context(extra);
-    await drive.assertAllowed(spreadsheetId);
+    await drive.assertAccessible(spreadsheetId);
     return textResult(
       await api.json(
         `https://sheets.googleapis.com/v4/spreadsheets/${encodeURIComponent(spreadsheetId)}/values/${encodeURIComponent(range)}:clear`,
@@ -587,7 +571,7 @@ server.registerTool(
   "gcalendar_list_events",
   {
     description:
-      "List events from the primary calendar or another calendar explicitly enabled in Artemis.",
+      "List events from a calendar accessible to the connected Google account.",
     inputSchema: {
       calendarId: z.string().default("primary"),
       timeMin: z.string().optional(),
@@ -602,7 +586,7 @@ server.registerTool(
     { calendarId, timeMin, timeMax, query, pageToken, maxResults },
     extra,
   ) => {
-    const api = assertCalendarAllowed(calendarId, extra);
+    const api = calendarApi(extra);
     const url = withQuery(
       `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events`,
       {
@@ -630,7 +614,7 @@ server.registerTool(
     annotations: { readOnlyHint: true, destructiveHint: false },
   },
   async ({ calendarId, eventId }, extra) => {
-    const api = assertCalendarAllowed(calendarId, extra);
+    const api = calendarApi(extra);
     return textResult(
       await api.json(
         `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events/${encodeURIComponent(eventId)}`,
@@ -658,7 +642,7 @@ server.registerTool(
     },
   },
   async ({ calendarId, event, sendUpdates }, extra) => {
-    const api = assertCalendarAllowed(calendarId, extra);
+    const api = calendarApi(extra);
     const url = withQuery(
       `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events`,
       {
@@ -689,7 +673,7 @@ server.registerTool(
     },
   },
   async ({ calendarId, eventId, patch, sendUpdates }, extra) => {
-    const api = assertCalendarAllowed(calendarId, extra);
+    const api = calendarApi(extra);
     const url = withQuery(
       `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events/${encodeURIComponent(eventId)}`,
       { sendUpdates },
@@ -716,7 +700,7 @@ server.registerTool(
     },
   },
   async ({ calendarId, eventId, sendUpdates }, extra) => {
-    const api = assertCalendarAllowed(calendarId, extra);
+    const api = calendarApi(extra);
     const url = withQuery(
       `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events/${encodeURIComponent(eventId)}`,
       { sendUpdates },

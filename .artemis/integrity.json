@@ -5,19 +5,19 @@
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-08-09T07:13:28.546Z",
+  "signedAt": "2026-08-09T10:46:08.287Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
     {
       "name": "gmail",
-      "version": "0.1.0",
-      "contentHash": "628db262bb55b4eb482beaba8b667963edc1762edf2fe934610cd7d20aa86d33",
-      "size": 1070407,
+      "version": "0.1.1",
+      "contentHash": "2e7ad5311e5c00d24e1bd7dae7cd49e9841c35efcc4990878d08dfd26f142d21",
+      "size": 1076754,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 1246,
-          "sha256": "900155157802cc11d2378f8d7df18d6ff8aad09ed2a5beadd3c22a1a0ae4453c"
+          "sha256": "25aac09616f3c4ee4af865213eb486a06190d22ceb5959690dadd0ad9b278f2c"
         },
         {
           "path": ".mcp.json",
@@ -26,18 +26,18 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1539,
-          "sha256": "2f6c964eb43815377ef897bad65a6441e3b88028947a27c9d9bd4f0d3ae472d8"
+          "size": 7460,
+          "sha256": "a2581fdd43a965067d5d27e58a51c43b06abc07f3998f767cd2abad2baaa55ba"
         },
         {
           "path": "assets/icon.svg",
-          "size": 364,
-          "sha256": "d86a08ec323a8f406be085f90f14ab6fce0632f3d96471495dd861a81075b6e0"
+          "size": 1433,
+          "sha256": "e4bc30efee67c45eef669804e5491949f5527478e0d3e3ee2e538d1ab826a64b"
         },
         {
           "path": "runtime/server.mjs",
-          "size": 1065667,
-          "sha256": "554185ceba8252e0581b5e92a1ee9ca3ee6e73ed7c0ed791ce36ea1d6302e8ec"
+          "size": 1065024,
+          "sha256": "9cea86a97774a0f7bbf62038c449644d334af238d4e28228b560407415dc7097"
         },
         {
           "path": "skills/gmail/SKILL.md",
@@ -48,14 +48,14 @@
     },
     {
       "name": "google-workspace",
-      "version": "0.1.0",
-      "contentHash": "a59fd59fbfa51e4f0a4813cbbf58201c894177a527dd538a14f9af27ce7a849c",
-      "size": 1072357,
+      "version": "0.1.1",
+      "contentHash": "cdcc3b5c8d8c37a5dd1962d0a62ed77df68438c2430e0f2d1930feefc4fc21df",
+      "size": 1076552,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 1327,
-          "sha256": "446816e3ef84c9af027f714f9b614ec192888e72baf8a01129c17fbf4c66adab"
+          "size": 1366,
+          "sha256": "d41431fd1648881b065ff241cce36828610464a4edb42d81c138ce5808aa7c9e"
         },
         {
           "path": ".mcp.json",
@@ -64,26 +64,26 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1179,
-          "sha256": "0d9e7b9dea6453ef3d105db97f03e35d4bf8e52cf4b96b10fc904dce00417907"
+          "size": 7358,
+          "sha256": "dd32fc3663cec8931e16d3ac986c99a4928ebd4c5d7954d285899b2bdffa6d6e"
         },
         {
           "path": "assets/icon.svg",
-          "size": 345,
-          "sha256": "5b2c2865ea93c76442f3381c3e4a30fa9521ce7465c3f9e9cd4ec028ba8e05ad"
+          "size": 719,
+          "sha256": "9e0e48a2e5510f10f95b77a8c8b5b190b6c0ead2a77d2791e20ced32a06c5686"
         },
         {
           "path": "runtime/server.mjs",
-          "size": 1067740,
-          "sha256": "a9106a766edc7e910ea358f08ebb3f9b9ab6eb2cede4a152ecce67c0cd95d342"
+          "size": 1065337,
+          "sha256": "438afa324c00b7c8f1cc16e371d46f0a0eaf96a97574fa2c4f558f4819b2e384"
         },
         {
           "path": "skills/google-workspace/SKILL.md",
-          "size": 1260,
-          "sha256": "eebcc6899ec58919071dbd9a5bb14ef587070416b660696bd64e508cb8cb39c0"
+          "size": 1266,
+          "sha256": "d76dda78a4d28f33ded02e873c007aff101fb205f625c275dafd82832e683b04"
         }
       ]
     }
   ],
-  "signature": "Q2YRxj8lD6wzDyxlKbBLSgF0Mkgx0kIQqAUcMJePgcQjkhoOdf5cTBLJ1AgOWKhqNkSRF6dNpv4fWIC7SiyTBA=="
+  "signature": "r55w1+KpNpVUyihAbgo/Ee94TpFIjF6OpMYejHjUHlab4PNgmt1HqjG19zznC5rn9Z6PKyeZpqlxnBVylGJIAg=="
 }

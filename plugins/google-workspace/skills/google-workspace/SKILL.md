@@ -1,6 +1,6 @@
 ---
 name: google-workspace
-description: Use direct Google Drive, Docs, Sheets, Slides, and Calendar tools for the single Google account connected in Artemis. Use only approved Drive roots and calendars.
+description: Use direct Google Drive, Docs, Sheets, Slides, and Calendar tools for resources available to the single Google account connected in Artemis.
 ---
 
 # Google Workspace
@@ -8,21 +8,22 @@ description: Use direct Google Drive, Docs, Sheets, Slides, and Calendar tools f
 Use this Skill when the user asks to inspect or change Google Drive, Docs,
 Sheets, Slides, or Calendar data.
 
-## Boundaries
+## Safety
 
-- Treat the configured Drive roots and calendars as hard limits. Never suggest
-  bypassing them or substituting a raw Google API request.
+- Treat Google's file, folder, Shared Drive, and calendar permissions as hard
+  limits. Never suggest bypassing them or using another identity.
 - Read the current resource before a destructive edit so the confirmation
   summary is specific.
 - Prefer reversible operations. Use trash rather than permanent deletion; this
   plugin does not provide permanent deletion.
-- Never claim that the OAuth grant itself is folder-scoped. Artemis requests a
-  full Drive scope and the plugin enforces the configured root allowlist.
+- Never claim that the OAuth grant itself is folder-scoped. Artemis requests
+  Drive and Calendar scopes; Google still enforces the connected account's
+  permissions for each resource.
 - Do not automatically retry non-idempotent writes.
 
 ## Workflow
 
-1. Use `gworkspace_status` when connection or allowed-root state is unclear.
+1. Use `google_workspace_status` when the connection state is unclear.
 2. Locate the exact file, folder, document, range, presentation, or event.
 3. Read its current state before editing.
 4. Explain material changes before calling a destructive tool.

@@ -1,6 +1,6 @@
 {
   "name": "artemis-plugin-shop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "External Git marketplace for signed Artemis plugins.",
   "repository": {
@@ -13,7 +13,7 @@
     "npm": ">=11.0.0"
   },
   "scripts": {
-    "build": "node scripts/generate-icons.mjs && node scripts/build.mjs",
+    "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "sign": "node scripts/sign-integrity.mjs",
