@@ -1,0 +1,15 @@
+{
+  "name": "qq-mail",
+  "description": "QQ Mail through the Artemis connector service.",
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "QQ Mail",
+    "shortDescription": "Connect QQ Mail directly from Artemis.",
+    "category": "Communication",
+    "capabilities": ["Connector", "Read", "Write"],
+    "logo": "./assets/icon.png"
+  },
+  "version": "0.2.0"
+}

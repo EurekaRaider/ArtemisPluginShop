@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "figma": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp",
+      "auth": "none",
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "figma",
+          "provider": "figma",
+          "displayName": "Figma Desktop",
+          "auth": "none",
+          "scopes": [],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read"],
+          "setup": "desktop-mcp"
+        }
+      }
+    }
+  }
+}

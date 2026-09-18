@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp",
+      "auth": "oauth",
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "linear",
+          "provider": "linear",
+          "displayName": "Linear",
+          "auth": "mcp-oauth",
+          "scopes": [],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
+        }
+      }
+    }
+  }
+}

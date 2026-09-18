@@ -1,8 +1,8 @@
 {
   "name": "artemis-plugin-shop",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
-  "description": "External Git marketplace for signed Artemis plugins.",
+  "description": "Signed local and official MCP connectors for Artemis.",
   "repository": {
     "type": "git",
     "url": "https://github.com/williamjinj-eng/ArtemisPluginShop.git"
@@ -28,14 +28,19 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",
+    "imapflow": "^2.0.5",
+    "mailparser": "^3.9.28",
+    "nodemailer": "^10.0.10",
     "zod": "4.1.12"
   },
   "devDependencies": {
+    "@types/mailparser": "^3.4.6",
     "@types/node": "26.1.1",
+    "@types/nodemailer": "^8.0.2",
     "esbuild": "0.28.1",
     "prettier": "3.9.6",
     "tar": "7.5.22",
     "typescript": "7.0.2",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   }
 }

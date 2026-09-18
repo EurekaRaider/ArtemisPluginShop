@@ -2,7 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-import { readArtemisAuth } from "../shared/artemis-auth.js";
+import { readConnectorAuth } from "../shared/connector-auth.js";
 import {
   GoogleApi,
   googleJsonBody,
@@ -21,7 +21,7 @@ import {
 } from "../shared/local-files.js";
 
 const GMAIL_ROOT = "https://gmail.googleapis.com/gmail/v1/users/me";
-const server = new McpServer({ name: "Artemis Gmail", version: "0.1.1" });
+const server = new McpServer({ name: "Artemis Gmail", version: "0.2.0" });
 
 type ToolExtra = { _meta?: Record<string, unknown>; signal: AbortSignal };
 type Header = { name?: string; value?: string };
@@ -48,7 +48,7 @@ const attachmentSchema = z.object({
 });
 
 function context(extra: ToolExtra) {
-  const auth = readArtemisAuth(extra._meta);
+  const auth = readConnectorAuth(extra._meta);
   return { auth, api: new GoogleApi(auth, extra.signal) };
 }
 
@@ -64,7 +64,7 @@ server.registerTool(
     const { auth } = context(extra);
     return textResult({
       connected: true,
-      accountEmail: auth.accountEmail,
+      accountEmail: auth.account,
       grant: "gmail",
       scope: "gmail.modify",
     });

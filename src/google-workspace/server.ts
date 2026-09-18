@@ -2,7 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-import { readArtemisAuth } from "../shared/artemis-auth.js";
+import { readConnectorAuth } from "../shared/connector-auth.js";
 import {
   DriveAccess,
   driveFilesEndpoint,
@@ -22,19 +22,19 @@ import {
 
 const server = new McpServer({
   name: "Artemis Google Workspace",
-  version: "0.1.1",
+  version: "0.2.0",
 });
 
 type ToolExtra = { _meta?: Record<string, unknown>; signal: AbortSignal };
 
 function context(extra: ToolExtra) {
-  const auth = readArtemisAuth(extra._meta);
+  const auth = readConnectorAuth(extra._meta);
   const api = new GoogleApi(auth, extra.signal);
   return { auth, api, drive: new DriveAccess(api) };
 }
 
 function calendarApi(extra: ToolExtra): GoogleApi {
-  const auth = readArtemisAuth(extra._meta);
+  const auth = readConnectorAuth(extra._meta);
   return new GoogleApi(auth, extra.signal);
 }
 
@@ -47,10 +47,10 @@ server.registerTool(
     annotations: { readOnlyHint: true, destructiveHint: false },
   },
   async (_input, extra) => {
-    const auth = readArtemisAuth(extra._meta);
+    const auth = readConnectorAuth(extra._meta);
     return textResult({
       connected: true,
-      accountEmail: auth.accountEmail,
+      accountEmail: auth.account,
       notice:
         "Drive and Calendar access follows the connected Google account's permissions and granted OAuth scopes.",
     });

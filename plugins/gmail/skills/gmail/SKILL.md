@@ -27,3 +27,5 @@ attachments, or labels.
    immediate send.
 4. Verify To, Cc, Bcc, subject, attachments, and reply threading.
 5. Summarize the exact outbound message before calling a send tool.
+
+Use Configure on this installed plugin to connect or reconnect; first installation opens its connection dialog automatically. Never ask users for Client IDs, developer projects, tokens or authorization codes in conversation. Historical plugin authorization is unsupported; install the paired version and reconnect.

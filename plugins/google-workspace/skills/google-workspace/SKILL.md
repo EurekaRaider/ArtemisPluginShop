@@ -28,3 +28,5 @@ Sheets, Slides, or Calendar data.
 3. Read its current state before editing.
 4. Explain material changes before calling a destructive tool.
 5. Report the returned resource ID and link after a successful change.
+
+Use Configure on this installed plugin to connect or reconnect; first installation opens its connection dialog automatically. Never ask users for Client IDs, developer projects, tokens or authorization codes in conversation. Historical plugin authorization is unsupported; install the paired version and reconnect.

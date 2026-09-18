@@ -5,16 +5,22 @@
       "command": "${ARTEMIS_NODE}",
       "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
       "x-artemis": {
-        "auth": {
+        "connector": {
+          "version": 1,
+          "id": "google-workspace",
           "provider": "google",
-          "grant": "google-workspace",
+          "displayName": "Google Workspace",
+          "auth": "oauth-pkce",
           "scopes": [
             "openid",
             "email",
             "profile",
             "https://www.googleapis.com/auth/drive",
             "https://www.googleapis.com/auth/calendar"
-          ]
+          ],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
         }
       }
     }

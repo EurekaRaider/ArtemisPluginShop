@@ -5,15 +5,21 @@
       "command": "${ARTEMIS_NODE}",
       "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
       "x-artemis": {
-        "auth": {
+        "connector": {
+          "version": 1,
+          "id": "gmail",
           "provider": "google",
-          "grant": "gmail",
+          "displayName": "Gmail",
+          "auth": "oauth-pkce",
           "scopes": [
             "openid",
             "email",
             "profile",
             "https://www.googleapis.com/auth/gmail.modify"
-          ]
+          ],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
         }
       }
     }

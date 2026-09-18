@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "auth": "oauth",
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "atlassian",
+          "provider": "atlassian",
+          "displayName": "Jira & Confluence",
+          "auth": "mcp-oauth",
+          "scopes": [],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
+        }
+      }
+    }
+  }
+}

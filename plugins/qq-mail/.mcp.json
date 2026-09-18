@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "qq-mail": {
+      "type": "stdio",
+      "command": "${ARTEMIS_NODE}",
+      "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "qq-mail",
+          "provider": "qq",
+          "displayName": "QQ Mail",
+          "auth": "app-password",
+          "scopes": [],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "authorization-code"
+        }
+      }
+    }
+  }
+}

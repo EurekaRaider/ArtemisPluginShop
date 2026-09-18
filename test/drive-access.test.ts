@@ -1,10 +1,13 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import type { ArtemisAuthContext } from "../src/shared/artemis-auth.js";
+import type { ConnectorAuthContext } from "../src/shared/connector-auth.js";
 import { DriveAccess } from "../src/shared/drive-access.js";
 import { GoogleApi } from "../src/shared/google-api.js";
 
-const auth: ArtemisAuthContext = {
+const auth: ConnectorAuthContext = {
+  version: 1,
+  provider: "google",
+  connectionId: "test-google",
   accessToken: "test-access-token-with-enough-length",
 };
 

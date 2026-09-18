@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "auth": "none",
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "github",
+          "provider": "github",
+          "displayName": "GitHub",
+          "auth": "device-code",
+          "scopes": ["read:user", "repo"],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "device-code"
+        }
+      }
+    }
+  }
+}

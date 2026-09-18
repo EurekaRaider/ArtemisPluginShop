@@ -1,3 +1,4 @@
+import { localPlugins } from "./plugin-builds.mjs";
 import { spawn } from "node:child_process";
 import { createInterface } from "node:readline";
 import { resolve } from "node:path";
@@ -13,7 +14,7 @@ if (
 }
 
 const root = resolve(import.meta.dirname, "..");
-for (const plugin of ["google-workspace", "gmail"]) {
+for (const plugin of localPlugins) {
   await smokeRuntime(
     plugin,
     resolve(root, "plugins", plugin, "runtime", "server.mjs"),
@@ -85,6 +86,14 @@ async function smokeRuntime(name, runtimePath) {
     ) {
       throw new Error(`${name} did not expose any MCP tools.`);
     }
+    const denied = await request("tools/call", {
+      name: listed.result.tools[0].name,
+      arguments: {},
+    });
+    if (!denied.error && !denied.result?.isError)
+      throw new Error(
+        `${name} accepted a call without the private connector context.`,
+      );
   } finally {
     lines.close();
     child.kill("SIGTERM");

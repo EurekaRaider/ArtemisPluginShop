@@ -1,0 +1,15 @@
+{
+  "name": "figma",
+  "description": "Figma Desktop through the Artemis connector service.",
+  "license": "MIT",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Figma Desktop",
+    "shortDescription": "Connect Figma Desktop directly from Artemis.",
+    "category": "Design",
+    "capabilities": ["Connector", "Read"],
+    "logo": "./assets/icon.png"
+  },
+  "version": "0.2.0"
+}

@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "auth": "oauth",
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "slack",
+          "provider": "slack",
+          "displayName": "Slack",
+          "auth": "mcp-oauth",
+          "scopes": [
+            "search:read.public",
+            "channels:history",
+            "chat:write",
+            "users:read"
+          ],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
+        }
+      }
+    }
+  }
+}

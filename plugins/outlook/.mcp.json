@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "outlook": {
+      "type": "stdio",
+      "command": "${ARTEMIS_NODE}",
+      "args": ["${PLUGIN_ROOT}/runtime/server.mjs"],
+      "x-artemis": {
+        "connector": {
+          "version": 1,
+          "id": "outlook",
+          "provider": "microsoft",
+          "displayName": "Outlook",
+          "auth": "oauth-pkce",
+          "scopes": [
+            "openid",
+            "profile",
+            "offline_access",
+            "User.Read",
+            "Mail.ReadWrite",
+            "Mail.Send"
+          ],
+          "requiredHostCapabilities": ["connector-v1"],
+          "capabilities": ["read", "write"],
+          "setup": "browser"
+        }
+      }
+    }
+  }
+}

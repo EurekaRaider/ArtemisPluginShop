@@ -1,3 +1,7 @@
+import {
+  validateConnectorDefinition,
+  assertConnectorTransport,
+} from "../src/shared/connector-contract.ts";
 import { createPublicKey, verify } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -65,7 +69,11 @@ for (const entry of marketplace.plugins) {
   ) {
     throw new Error(`Plugin ${entry.name} has invalid marketplace policy.`);
   }
-  if (entry.category !== "Productivity")
+  if (
+    !["Productivity", "Communication", "Development", "Design"].includes(
+      entry.category,
+    )
+  )
     throw new Error(`Plugin ${entry.name} has invalid category.`);
   const pluginRoot = resolvePluginPath(root, entry.source);
   const manifest = JSON.parse(
@@ -73,6 +81,41 @@ for (const entry of marketplace.plugins) {
   );
   if (manifest.name !== entry.name)
     throw new Error(`Plugin name mismatch for ${entry.name}.`);
+  const mcp = JSON.parse(
+    await readFile(resolve(pluginRoot, ".mcp.json"), "utf8"),
+  );
+  const servers = Object.values(mcp.mcpServers ?? {});
+  if (servers.length !== 1)
+    throw new Error("Each plugin must declare exactly one connector runtime.");
+  const declaration = servers[0]["x-artemis"]?.connector;
+  if (
+    !declaration ||
+    declaration.version !== 1 ||
+    declaration.id !== entry.name ||
+    servers[0]["x-artemis"].auth !== undefined
+  )
+    throw new Error(`Invalid connector contract: ${entry.name}`);
+  if (
+    JSON.stringify(mcp).match(
+      /"(?:accessToken|refreshToken|appPassword|clientSecret|client_secret)"\s*:/u,
+    )
+  )
+    throw new Error("Credentials cannot be published in connector packages.");
+  const validated = validateConnectorDefinition(declaration);
+  assertConnectorTransport(
+    validated,
+    servers[0].command ? "stdio" : "streamable-http",
+    servers[0].url,
+  );
+  if (
+    servers[0].command &&
+    (servers[0].command !== "${ARTEMIS_NODE}" ||
+      JSON.stringify(servers[0].args) !==
+        JSON.stringify(["${PLUGIN_ROOT}/runtime/server.mjs"]))
+  )
+    throw new Error("Local connectors must use the bundled runtime.");
+  if (servers[0].env || servers[0].headers)
+    throw new Error("Connector credentials must be supplied by the host.");
   const collected = await collectPlugin(pluginRoot);
   const signed = signedPlugins.get(entry.name);
   if (

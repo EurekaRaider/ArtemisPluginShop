@@ -1,16 +1,14 @@
+import { localPlugins } from "./plugin-builds.mjs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
 import { build } from "esbuild";
 
 const root = resolve(import.meta.dirname, "..");
-const targets = [
-  [
-    "src/google-workspace/server.ts",
-    "plugins/google-workspace/runtime/server.mjs",
-  ],
-  ["src/gmail/server.ts", "plugins/gmail/runtime/server.mjs"],
-];
+const targets = localPlugins.map((name) => [
+  `src/${name}/server.ts`,
+  `plugins/${name}/runtime/server.mjs`,
+]);
 
 for (const [entry, output] of targets) {
   const outfile = resolve(root, output);
@@ -26,7 +24,7 @@ for (const [entry, output] of targets) {
     legalComments: "none",
     sourcemap: false,
     banner: {
-      js: "// Generated from this repository; no install-time dependencies are required.",
+      js: "// Generated; no install-time dependencies.\nimport { createRequire as artemisCreateRequire } from 'node:module'; const require = artemisCreateRequire(import.meta.url);",
     },
   });
   const generated = await readFile(outfile, "utf8");

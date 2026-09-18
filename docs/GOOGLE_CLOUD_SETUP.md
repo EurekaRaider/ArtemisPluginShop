@@ -13,11 +13,11 @@ Enable only the APIs needed by installed plugins:
 - Google Calendar API v3
 - Gmail API v1
 
-Create an OAuth 2.0 client ID with application type **Desktop app** and download its JSON file. Place it at `apps/desktop/resources/google-oauth-client.json` only in the private build workspace. The path is Git-ignored and Electron copies it into packaged resources.
+Create an OAuth 2.0 client ID with application type **Desktop app** and download its JSON file. Put its public `client_id` into the Google `clientId` field of `apps/desktop/resources/connector-clients.json` in the publisher build workspace, using `version: 1`. If required by the registered Desktop app, its installed-app client secret goes in the optional Google `clientSecret` field. Never use a confidential Web client or a user token. The new path is Git-ignored and Electron copies it into packaged resources.
 
 ## Consent and grants
 
-Artemis runs one system-browser flow per plugin grant, using PKCE, a cryptographically random `state`, a temporary loopback listener on `127.0.0.1`, `access_type=offline`, and an account `login_hint` after the first connection. It validates the returned OpenID Connect `sub`; a different Google identity is rejected.
+Artemis runs one system-browser flow per plugin grant, using PKCE, a cryptographically random `state`, a temporary loopback listener on `127.0.0.1`, `access_type=offline`, and a separately verified account identity. It validates the returned OpenID Connect `sub`; a different Google identity is rejected.
 
 Workspace and Gmail grants intentionally use separate refresh tokens. If a plugin update adds scopes, Artemis leaves it installed but disabled until that grant is authorized again.
 
@@ -33,4 +33,6 @@ Use non-production test data and verify:
 - cancelling a destructive confirmation produces no Google API call;
 - Gmail reply headers retain the thread and no permanent-delete capability exists;
 - disconnecting one plugin retains the other grant and shared identity;
-- **Disconnect Google account** revokes Google authorization and removes all local secrets.
+- **Disconnect** disables that connector and removes its credentials from the new encrypted vault; historical records remain untouched. Users can additionally revoke application access in Google account settings.
+
+Production restricted-scope verification must account for data sent to cloud models. A local desktop client does not automatically qualify for assessment exemption.

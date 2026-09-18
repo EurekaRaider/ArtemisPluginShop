@@ -1,10 +1,10 @@
-import type { ArtemisAuthContext } from "./artemis-auth.js";
+import type { ConnectorAuthContext } from "./connector-auth.js";
 
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 
 export class GoogleApi {
   constructor(
-    private readonly auth: ArtemisAuthContext,
+    private readonly auth: ConnectorAuthContext,
     private readonly signal?: AbortSignal,
   ) {}
 
@@ -32,6 +32,23 @@ export class GoogleApi {
     init: RequestInit,
     options: { readOnly?: boolean },
   ): Promise<Response> {
+    const target = new URL(url);
+    if (
+      target.protocol !== "https:" ||
+      ![
+        "gmail.googleapis.com",
+        "www.googleapis.com",
+        "docs.googleapis.com",
+        "sheets.googleapis.com",
+        "slides.googleapis.com",
+        "drive.googleapis.com",
+        "calendar.googleapis.com",
+      ].includes(target.hostname) ||
+      target.username ||
+      target.password ||
+      target.port
+    )
+      throw new Error("Unsupported Google API resource.");
     const attempts = options.readOnly ? 3 : 1;
     for (let attempt = 0; attempt < attempts; attempt += 1) {
       const headers = new Headers(init.headers);
@@ -39,6 +56,7 @@ export class GoogleApi {
       headers.set("Accept", "application/json");
       const response = await fetch(url, {
         ...init,
+        redirect: "error",
         headers,
         ...(this.signal ? { signal: this.signal } : {}),
       });

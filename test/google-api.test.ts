@@ -12,10 +12,17 @@ describe("Google API transport", () => {
       .mockResolvedValueOnce(Response.json({ ok: true }));
     vi.stubGlobal("fetch", fetchMock);
     const api = new GoogleApi({
+      version: 1,
+      provider: "google",
+      connectionId: "gmail",
       accessToken: "access-token-long-enough-for-test",
     });
     await expect(
-      api.json("https://example.invalid", {}, { readOnly: true }),
+      api.json(
+        "https://gmail.googleapis.com/gmail/v1/users/me/profile",
+        {},
+        { readOnly: true },
+      ),
     ).resolves.toEqual({ ok: true });
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
@@ -26,10 +33,15 @@ describe("Google API transport", () => {
       .mockResolvedValue(new Response("busy", { status: 503 }));
     vi.stubGlobal("fetch", fetchMock);
     const api = new GoogleApi({
+      version: 1,
+      provider: "google",
+      connectionId: "gmail",
       accessToken: "access-token-long-enough-for-test",
     });
     await expect(
-      api.json("https://example.invalid", { method: "POST" }),
+      api.json("https://gmail.googleapis.com/gmail/v1/users/me/profile", {
+        method: "POST",
+      }),
     ).rejects.toThrow(/503/);
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
