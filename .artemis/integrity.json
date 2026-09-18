@@ -5,19 +5,19 @@
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-09-18T14:09:21.494Z",
+  "signedAt": "2026-09-18T14:38:07.458Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
     {
       "name": "atlassian",
-      "version": "0.2.0",
-      "contentHash": "6f6285eba037fc8fb5df9f21842d6ba5712eb458befa8da87cc94d443f1b4e67",
-      "size": 1296295,
+      "version": "0.2.1",
+      "contentHash": "4324c670c29351b6135b8eb0b6ee46c4baa43e4a59e645728012d2ff7e8414bf",
+      "size": 2859,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 455,
-          "sha256": "1b02e77691b3b471a52c22496943ab094f91fc0a2956f23f1d17f87481749aee"
+          "sha256": "7632a83d2c5096f91437a6edcd5f3ae662898ada77e1da9661c61621838d813e"
         },
         {
           "path": ".mcp.json",
@@ -26,8 +26,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 1232,
+          "sha256": "2f9c16faff67612d750e2bec2ba0d9c48b3eb158deb8ba9ca15a6a5db2617ddb"
         },
         {
           "path": "skills/atlassian/SKILL.md",
@@ -38,14 +38,14 @@
     },
     {
       "name": "figma",
-      "version": "0.2.0",
-      "contentHash": "95a76a3aac80406cb854066dde76b87b2b9fee82073ab72124a4bbc3c5f37258",
-      "size": 1296220,
+      "version": "0.2.1",
+      "contentHash": "cbe3713631f7d59c00b6ab1f42ff91afaa3bf9acb7551e34bb5585c07efd2532",
+      "size": 5379,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 424,
-          "sha256": "bc7f9d0ff6bb4e29d605db7b9418db845a4b2a57b21cc6b9ba8263f1b34bd680"
+          "sha256": "e90b7b635ce028ef216b643842fb65f8c200de2bc44b70d1aabc11b54b865074"
         },
         {
           "path": ".mcp.json",
@@ -54,8 +54,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 3827,
+          "sha256": "b418ebb4a1d9d27cbeca7276b178f980bdaaeb8cffd998098136e21d8425ec69"
         },
         {
           "path": "skills/figma/SKILL.md",
@@ -66,14 +66,14 @@
     },
     {
       "name": "github",
-      "version": "0.2.0",
-      "contentHash": "cca6857d3bb64d62f8e83b2b1602c4c2adf03c346542ca6c4ff4a28ec1d1a30f",
-      "size": 1296239,
+      "version": "0.2.1",
+      "contentHash": "1c5204b7bb60f258445d858af45d391a215c12a996498464e29a1c70a92d7731",
+      "size": 34841,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 418,
-          "sha256": "97e94a779a76ce8f5e0d6f31de172bb810ff95a75da21cc8313fa87ee1569d51"
+          "sha256": "c1cd280db5fbe134acae82de2b28be72e5a01b7f8813473ef9b01cfdd1f9f2ce"
         },
         {
           "path": ".mcp.json",
@@ -82,8 +82,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 33270,
+          "sha256": "1bedd6a1948971f07970414717012503805309f25af0b2c542dbc3524b5880e9"
         },
         {
           "path": "skills/github/SKILL.md",
@@ -170,14 +170,14 @@
     },
     {
       "name": "linear",
-      "version": "0.2.0",
-      "contentHash": "1cf173bfa5bf90ca27882ef6eb2cebbdae9ff2e79467fc70af3b7e2816967978",
-      "size": 1296208,
+      "version": "0.2.1",
+      "contentHash": "074c7339d2c943f934913bc33cd9f493856af9f314a6f38841e137885636e384",
+      "size": 26814,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 419,
-          "sha256": "b9f88ae9963181919ca07bb3c534c42b56615a11f50eb323ea14b1c9c06f4e42"
+          "sha256": "3a7ded54260abd84afc19486def64bf11932a070549f703d1da8ee6c4b10c6fe"
         },
         {
           "path": ".mcp.json",
@@ -186,8 +186,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 25274,
+          "sha256": "3d22d53907820245ec1724a4954d3e180b70f21b2552697986b3f141a6730ef7"
         },
         {
           "path": "skills/linear/SKILL.md",
@@ -198,14 +198,14 @@
     },
     {
       "name": "notion",
-      "version": "0.2.0",
-      "contentHash": "3633e3d0118b95ac31f0cdd968a2812dd24a28d65f32cc758cf06037601c6e33",
-      "size": 1296208,
+      "version": "0.2.1",
+      "contentHash": "48921406623fb197a32f352cc11e2cca163e44b1768be78f06a4bfcefbb14f79",
+      "size": 9618,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 419,
-          "sha256": "3b124964d105ace7efaa850b77e2e8b92717bfee8ddc83a6210e759f352a1558"
+          "sha256": "092998f32a0035d8bc6f588cb9e1c7b29138e6b2c82e6e8e9bbadbcd78ce647d"
         },
         {
           "path": ".mcp.json",
@@ -214,8 +214,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 8078,
+          "sha256": "483846a85e43e22879445047b83b22033e70fcc25ab34809ebadb7f856507ee0"
         },
         {
           "path": "skills/notion/SKILL.md",
@@ -226,14 +226,14 @@
     },
     {
       "name": "outlook",
-      "version": "0.2.0",
-      "contentHash": "e2f0e7bfd52e5c7327ee0f9d46e326ae1a36cf675134dab998aa994b671ec40f",
-      "size": 2361048,
+      "version": "0.2.1",
+      "contentHash": "2a562ffc0df6b709dfee4b1436fa94cc0f3aca184d606d24fcbd44759b14419b",
+      "size": 1075001,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 424,
-          "sha256": "72cabeaabb46f9a4883d523ba0c5a419fff7c48c20dd5756e4d0af7da263813f"
+          "sha256": "816adf11c6e77f68403cc70bb48eb2bf41c0e46276559d06b5710dcde1b51725"
         },
         {
           "path": ".mcp.json",
@@ -242,8 +242,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 8621,
+          "sha256": "cdf08af06820bfbe3df3ac044a01a914f23abb570269cf02b230be145b2cb914"
         },
         {
           "path": "runtime/server.mjs",
@@ -259,14 +259,14 @@
     },
     {
       "name": "qq-mail",
-      "version": "0.2.0",
-      "contentHash": "dff6b49ca4ee6766ca362e85626f985a88cb5dc288df8f12dd34c5390cbac13b",
-      "size": 5202772,
+      "version": "0.2.1",
+      "contentHash": "0e2256c71c0eb19bc93a9b0c6aa58d3e283ece549e8f58b2768c2ddb62b0b13e",
+      "size": 3911014,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 424,
-          "sha256": "f44d10adc1c56809c85734e277bb1873a661e34a4761d73d726fae742a4ddd44"
+          "sha256": "2833f4b87c787cfb08eff09d5f80ec706f27a2c1b8c6c6eb6b6719ed1d4468d6"
         },
         {
           "path": ".mcp.json",
@@ -275,8 +275,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 2910,
+          "sha256": "ea5718ce82f326c827ac6de52bc2e759864650956062faa61fcaf61694d0ab6e"
         },
         {
           "path": "runtime/server.mjs",
@@ -292,14 +292,14 @@
     },
     {
       "name": "slack",
-      "version": "0.2.0",
-      "contentHash": "b7d58954e869fb5d6e4f09d504ecda6cce951128fba645aac08ed38d9abb252d",
-      "size": 1296325,
+      "version": "0.2.1",
+      "contentHash": "fbd7b19ebbbec505bb05b8888f0c01530597dc9769476d9c0268641972e46134",
+      "size": 13224,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
           "size": 416,
-          "sha256": "d5173eac8f201c537ed2c7cd0c42882218edb48a35fba71fc6bea1f72aab7f37"
+          "sha256": "9585b50898f47af37ec9d889aae9e07d3607a7e49ee7115b377a4c525256a45e"
         },
         {
           "path": ".mcp.json",
@@ -308,8 +308,8 @@
         },
         {
           "path": "assets/icon.png",
-          "size": 1294668,
-          "sha256": "bb93114da541944b9586486dc050a69245071d71f68a82e008e8603444b375a5"
+          "size": 11567,
+          "sha256": "cfd9f050bf26ea547af438722c5a93be002c721f0f32a3c996595eab7af1b36d"
         },
         {
           "path": "skills/slack/SKILL.md",
@@ -319,5 +319,5 @@
       ]
     }
   ],
-  "signature": "xSliZdY3zz9Ynv8nbpQ264Pdsrz4+ohkN7WzZCSZlS2WXzMYKFW2fD2DHRMiaQ7H9h4XlOdLRcp2azV97C9XAA=="
+  "signature": "xDVIhnSxUP1WG75licL70JhcGd6TGbFoFvJRMiDnX6ArFJlFhIuYDuSSpSlMT/3ejdCMoCZfO9T8xEPRx64cCw=="
 }
