@@ -1,41 +1,13 @@
 {
   "schemaVersion": 1,
   "marketplaceName": "artemis-plugin-shop",
-  "marketplaceHash": "fbe1b48f53618e6ffae579c9bd7684393e85bdc8a0c8e554f1f5e1d636a52c41",
+  "marketplaceHash": "d5ce2a339e1a251f1d761fd72fa86b39c4cd0ed0e5cb8e9a6f1c47a489aaf3da",
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-09-19T09:59:18.406Z",
+  "signedAt": "2026-09-19T12:16:07.907Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
-    {
-      "name": "atlassian",
-      "version": "0.2.2",
-      "contentHash": "3ae95176e057498cd6ddcf526c68aa370372e47f07d0feab1d3d6a39df54063a",
-      "size": 6374,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3970,
-          "sha256": "499f26971b70772adedfbeda846ce1e2f6e8d12dec2b5fab1d736e109de8528e"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 526,
-          "sha256": "5491c3b8c3790087046c775f3dbcf3ff4549e81fef3cda32e23e6d5886485212"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 1232,
-          "sha256": "2f9c16faff67612d750e2bec2ba0d9c48b3eb158deb8ba9ca15a6a5db2617ddb"
-        },
-        {
-          "path": "skills/atlassian/SKILL.md",
-          "size": 646,
-          "sha256": "05af976d4c592b93f9cf3b0d73ab2d11b652c2b1d94a3674053a130fae32b6d0"
-        }
-      ]
-    },
     {
       "name": "figma",
       "version": "0.2.2",
@@ -169,95 +141,6 @@
       ]
     },
     {
-      "name": "linear",
-      "version": "0.2.2",
-      "contentHash": "1f936fc4a6e0da0d2f3e4146731a960b3d1582b18d7447586ae7016ee9ce751c",
-      "size": 29867,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3472,
-          "sha256": "4e6f652e9fafefb89ecdd2398ef90e00561ca1da039e84cd865482a4556b61da"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 500,
-          "sha256": "2f3a7b56f3729326b22e34b0a1494e43440db2aec851ed3012fb10781307e614"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 25274,
-          "sha256": "3d22d53907820245ec1724a4954d3e180b70f21b2552697986b3f141a6730ef7"
-        },
-        {
-          "path": "skills/linear/SKILL.md",
-          "size": 621,
-          "sha256": "7bfad2e4a7ddf2f8796831a8270285ac1068aafa596605d13cf667967d88a906"
-        }
-      ]
-    },
-    {
-      "name": "notion",
-      "version": "0.2.2",
-      "contentHash": "29e8765a460082026af89a22727db008ea98554c0d1d16c085ce3d2aba953fa7",
-      "size": 12671,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3472,
-          "sha256": "44b302d93ca170e61c1bd9f4a8f2e18a99945edc1911a07d0b3966cdddc0b192"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 500,
-          "sha256": "2132bfb1bb7e2f5c08eeaeac7de559bc9f033e48e6d0d3287d8c2e4e7e6525d3"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 8078,
-          "sha256": "483846a85e43e22879445047b83b22033e70fcc25ab34809ebadb7f856507ee0"
-        },
-        {
-          "path": "skills/notion/SKILL.md",
-          "size": 621,
-          "sha256": "153b4efc90b5c1fc5112c89efc0dad194027706709353c69e70680ed78d8cab5"
-        }
-      ]
-    },
-    {
-      "name": "outlook",
-      "version": "0.2.2",
-      "contentHash": "db9c9cba708a4e0a28cad44cd1586425c2aa1686d9e0bea242e51e290901f2a5",
-      "size": 1078096,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3519,
-          "sha256": "7b1671cd33ec241e24a298abdb840508bce3efd6d39a393860baefe8b7cd0ec4"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 696,
-          "sha256": "a36f3202a614b0576160753f3d7e29194db91976d3b262d2c1df70cbb94f8ada"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 8621,
-          "sha256": "cdf08af06820bfbe3df3ac044a01a914f23abb570269cf02b230be145b2cb914"
-        },
-        {
-          "path": "runtime/server.mjs",
-          "size": 1064636,
-          "sha256": "5fc1ef90dc387a09525a771053b7c6411043c804065c3f0c1ba24f788edfea46"
-        },
-        {
-          "path": "skills/outlook/SKILL.md",
-          "size": 624,
-          "sha256": "e70d9d1bf817e3e060e18e426c493aafd90622440525ead92739243aa6f8b0ca"
-        }
-      ]
-    },
-    {
       "name": "qq-mail",
       "version": "0.2.2",
       "contentHash": "1595850692ec334503201ed41ab9b8803b6d39efd8cdc1803098fdcca1db8bed",
@@ -289,35 +172,7 @@
           "sha256": "98afa404627aa9e1b16f322deda641406a9ac179ac7d8368f3879f43b3733532"
         }
       ]
-    },
-    {
-      "name": "slack",
-      "version": "0.2.2",
-      "contentHash": "3dd5ab49eedefe0fe605455b952a421558c191c142a5d55d5746e9c5ad639877",
-      "size": 16235,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3427,
-          "sha256": "867a147b817b725ce628ddd001eb8a2f2c239713fd1c0e61ab90d45a33e7c96a"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 623,
-          "sha256": "0366fa9019376c71b096cdd213289a15ed74c11b20106ddaf3af6edcea8052ce"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 11567,
-          "sha256": "cfd9f050bf26ea547af438722c5a93be002c721f0f32a3c996595eab7af1b36d"
-        },
-        {
-          "path": "skills/slack/SKILL.md",
-          "size": 618,
-          "sha256": "12bd64af3c4ecdc1cd4180b5beb89a566b1a48603872298f8e8f35d94f8fa0c6"
-        }
-      ]
     }
   ],
-  "signature": "hoGKPUj5lFs8R21dNuXtnQBSeylGKeltqiKDzCxuNe6FwtCfsK2CKCXeuM10Ca8w7Jlby3ovAm7lwuQUBroPCA=="
+  "signature": "jfy/68gYctShB+pu/OSidTIZAjuOevvx1Ch0N7/tn5QnyDR+Ci+FpBQ6N/oGFfnKq9+0BBiMh0gv1mS0RF5zCw=="
 }
