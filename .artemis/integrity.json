@@ -1,41 +1,13 @@
 {
   "schemaVersion": 1,
   "marketplaceName": "artemis-plugin-shop",
-  "marketplaceHash": "fbe1b48f53618e6ffae579c9bd7684393e85bdc8a0c8e554f1f5e1d636a52c41",
+  "marketplaceHash": "e79671c76a2b04148d5b9b0f92ce031d402742d06b4f509f755d09ff2b20aee1",
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-09-19T09:59:18.406Z",
+  "signedAt": "2026-09-19T12:14:45.799Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
-    {
-      "name": "atlassian",
-      "version": "0.2.2",
-      "contentHash": "3ae95176e057498cd6ddcf526c68aa370372e47f07d0feab1d3d6a39df54063a",
-      "size": 6374,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3970,
-          "sha256": "499f26971b70772adedfbeda846ce1e2f6e8d12dec2b5fab1d736e109de8528e"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 526,
-          "sha256": "5491c3b8c3790087046c775f3dbcf3ff4549e81fef3cda32e23e6d5886485212"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 1232,
-          "sha256": "2f9c16faff67612d750e2bec2ba0d9c48b3eb158deb8ba9ca15a6a5db2617ddb"
-        },
-        {
-          "path": "skills/atlassian/SKILL.md",
-          "size": 646,
-          "sha256": "05af976d4c592b93f9cf3b0d73ab2d11b652c2b1d94a3674053a130fae32b6d0"
-        }
-      ]
-    },
     {
       "name": "figma",
       "version": "0.2.2",
@@ -225,39 +197,6 @@
       ]
     },
     {
-      "name": "outlook",
-      "version": "0.2.2",
-      "contentHash": "db9c9cba708a4e0a28cad44cd1586425c2aa1686d9e0bea242e51e290901f2a5",
-      "size": 1078096,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3519,
-          "sha256": "7b1671cd33ec241e24a298abdb840508bce3efd6d39a393860baefe8b7cd0ec4"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 696,
-          "sha256": "a36f3202a614b0576160753f3d7e29194db91976d3b262d2c1df70cbb94f8ada"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 8621,
-          "sha256": "cdf08af06820bfbe3df3ac044a01a914f23abb570269cf02b230be145b2cb914"
-        },
-        {
-          "path": "runtime/server.mjs",
-          "size": 1064636,
-          "sha256": "5fc1ef90dc387a09525a771053b7c6411043c804065c3f0c1ba24f788edfea46"
-        },
-        {
-          "path": "skills/outlook/SKILL.md",
-          "size": 624,
-          "sha256": "e70d9d1bf817e3e060e18e426c493aafd90622440525ead92739243aa6f8b0ca"
-        }
-      ]
-    },
-    {
       "name": "qq-mail",
       "version": "0.2.2",
       "contentHash": "1595850692ec334503201ed41ab9b8803b6d39efd8cdc1803098fdcca1db8bed",
@@ -289,35 +228,7 @@
           "sha256": "98afa404627aa9e1b16f322deda641406a9ac179ac7d8368f3879f43b3733532"
         }
       ]
-    },
-    {
-      "name": "slack",
-      "version": "0.2.2",
-      "contentHash": "3dd5ab49eedefe0fe605455b952a421558c191c142a5d55d5746e9c5ad639877",
-      "size": 16235,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3427,
-          "sha256": "867a147b817b725ce628ddd001eb8a2f2c239713fd1c0e61ab90d45a33e7c96a"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 623,
-          "sha256": "0366fa9019376c71b096cdd213289a15ed74c11b20106ddaf3af6edcea8052ce"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 11567,
-          "sha256": "cfd9f050bf26ea547af438722c5a93be002c721f0f32a3c996595eab7af1b36d"
-        },
-        {
-          "path": "skills/slack/SKILL.md",
-          "size": 618,
-          "sha256": "12bd64af3c4ecdc1cd4180b5beb89a566b1a48603872298f8e8f35d94f8fa0c6"
-        }
-      ]
     }
   ],
-  "signature": "hoGKPUj5lFs8R21dNuXtnQBSeylGKeltqiKDzCxuNe6FwtCfsK2CKCXeuM10Ca8w7Jlby3ovAm7lwuQUBroPCA=="
+  "signature": "lYFfKgdTOl/JNGF1QetIabnm42NZ1ZBNxFBvvEIOEoO/Oy0IajLyAtP2Mjc4VCBF3/OzGZo22vI0HvcmUgStDw=="
 }

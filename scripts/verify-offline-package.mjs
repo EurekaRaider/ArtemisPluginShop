@@ -5,7 +5,19 @@ import { basename, relative, resolve, sep } from "node:path";
 
 import { x as extractTar } from "tar";
 
+import { resolvePluginPath } from "./integrity-lib.mjs";
+
 const root = resolve(import.meta.dirname, "..");
+const marketplace = JSON.parse(
+  await readFile(resolve(root, ".agents/plugins/marketplace.json"), "utf8"),
+);
+const sourcePaths = [
+  ".agents/plugins/marketplace.json",
+  ".artemis/integrity.json",
+  ...marketplace.plugins.map((entry) =>
+    relative(root, resolvePluginPath(root, entry.source)).split(sep).join("/"),
+  ),
+];
 const metadata = JSON.parse(
   await readFile(resolve(root, "package.json"), "utf8"),
 );
@@ -67,9 +79,11 @@ async function collectFiles(directory, sourceMode) {
       const relativePath = relative(directory, path).split(sep).join("/");
       if (
         sourceMode &&
-        ![".agents", ".agents/plugins", ".artemis", "plugins"].some(
+        !sourcePaths.some(
           (allowed) =>
-            relativePath === allowed || relativePath.startsWith(`${allowed}/`),
+            relativePath === allowed ||
+            relativePath.startsWith(`${allowed}/`) ||
+            allowed.startsWith(`${relativePath}/`),
         )
       ) {
         continue;
@@ -83,14 +97,6 @@ async function collectFiles(directory, sourceMode) {
       if (information.isDirectory()) {
         await visit(path);
       } else if (information.isFile()) {
-        if (
-          sourceMode &&
-          relativePath !== ".agents/plugins/marketplace.json" &&
-          relativePath !== ".artemis/integrity.json" &&
-          !relativePath.startsWith("plugins/")
-        ) {
-          continue;
-        }
         const data = await readFile(path);
         files.set(
           relativePath,

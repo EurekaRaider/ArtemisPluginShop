@@ -5,25 +5,22 @@ install a plugin, choose **Connect**, and authorize in the system browser or
 follow the short local setup guide. No Artemis backend, Node installation,
 Docker or user-created developer project is required.
 
-| Plugin           | Runtime               | Initial functionality                                                        |
-| ---------------- | --------------------- | ---------------------------------------------------------------------------- |
-| Gmail            | Bundled local MCP     | Search/read, attachments, drafts, send, labels, archive, trash/restore       |
-| Google Workspace | Bundled local MCP     | Drive, Docs, Sheets, Slides and Calendar read/write                          |
-| Outlook          | Bundled Graph MCP     | Search/read, attachments, drafts, send/reply/forward, categories and folders |
-| QQ Mail          | Bundled IMAP/SMTP MCP | Search/read, attachments, drafts, send, read/unread and safe move            |
-| GitHub           | Official remote MCP   | Tools provided by the approved GitHub MCP service                            |
-| Figma            | Official desktop MCP  | Design context, screenshots and metadata exposed by the running desktop app  |
-| Notion           | Official remote MCP   | Tools exposed by the admitted official service                               |
-| Linear           | Official remote MCP   | Tools exposed by the admitted official service                               |
-| Atlassian        | Official remote MCP   | Jira/Confluence tools exposed by the admitted official service               |
-| Slack            | Official remote MCP   | Tools exposed by the admitted official service                               |
+| Plugin           | Runtime               | Initial functionality                                                       |
+| ---------------- | --------------------- | --------------------------------------------------------------------------- |
+| Gmail            | Bundled local MCP     | Search/read, attachments, drafts, send, labels, archive, trash/restore      |
+| Google Workspace | Bundled local MCP     | Drive, Docs, Sheets, Slides and Calendar read/write                         |
+| QQ Mail          | Bundled IMAP/SMTP MCP | Search/read, attachments, drafts, send, read/unread and safe move           |
+| GitHub           | Official remote MCP   | Tools provided by the approved GitHub MCP service                           |
+| Figma            | Official desktop MCP  | Design context, screenshots and metadata exposed by the running desktop app |
+| Notion           | Official remote MCP   | Tools exposed by the admitted official service                              |
+| Linear           | Official remote MCP   | Tools exposed by the admitted official service                              |
 
 Remote services are release candidates until publisher/client admission and
 controlled-account acceptance are recorded. This repository's local builds do
 not establish platform approval. Figma does not fall back to PAT authentication.
-QQ and Gmail do not expose permanent deletion. Outlook's simple attachments are
-limited to 3 MiB each; QQ reads messages up to 25 MiB and sends combined
-attachments up to 20 MiB. No continuous inbox monitoring is included.
+QQ and Gmail do not expose permanent deletion. QQ reads messages up to 25 MiB
+and sends combined attachments up to 20 MiB. No continuous inbox monitoring is
+included.
 
 ## Connect
 
@@ -31,7 +28,7 @@ attachments up to 20 MiB. No continuous inbox monitoring is included.
 2. Verify the displayed signing-key fingerprint and install the plugin. Its connection
    dialog opens automatically. Loading the marketplace alone does not authorize anything.
    Later, use Configure on the installed plugin to reconnect or disconnect.
-3. Google/Microsoft: finish browser consent. Gmail and Workspace have separate
+3. Google: finish browser consent. Gmail and Workspace have separate
    permissions for the same Google identity.
 4. GitHub: copy the displayed code and confirm on GitHub's device page.
 5. QQ: enable IMAP/SMTP in QQ Mail and enter the email and generated authorization
@@ -40,9 +37,7 @@ attachments up to 20 MiB. No continuous inbox monitoring is included.
 
 Client IDs belong to the publisher's registered applications and are bundled by
 Artemis. They are never requested from ordinary users. Dynamic registration is
-used only where the platform supports it. Slack requires publisher registration,
-PKCE and its directory/client admission rules; desktop callback is
-`http://localhost:43827/mcp-oauth/slack`. See the paired Artemis
+used only where the platform supports it. See the paired Artemis
 [connector publisher guide](https://github.com/williamjinj-eng/Artemis/blob/main/docs/connectors.md).
 
 ## New contract only
@@ -66,7 +61,7 @@ uncertain send must be checked in the mailbox before an explicit retry.
 
 ## Languages
 
-All ten plugins include display names and descriptions in the same 14 languages
+All seven listed plugins include display names and descriptions in the same 14 languages
 as Artemis: `en`, `zh-CN`, `zh-TW`, `ja`, `ko`, `es`, `fr`, `de`, `pt-BR`, `it`,
 `ru`, `ar`, `hi`, and `id`. Detailed descriptions and suggested prompts are also
 translated where declared. Product names and connector identifiers stay stable.
@@ -115,5 +110,4 @@ Google restricted-scope verification must cover the actual model data flow;
 a desktop-only transport does not automatically exempt cloud model processing.
 
 Official references: [Google verification](https://developers.google.com/identity/protocols/oauth2/production-readiness/restricted-scope-verification),
-[Figma desktop](https://developers.figma.com/docs/figma-mcp-server/local-server-installation/),
-[Slack MCP](https://docs.slack.dev/ai/slack-mcp-server/).
+[Figma desktop](https://developers.figma.com/docs/figma-mcp-server/local-server-installation/).
