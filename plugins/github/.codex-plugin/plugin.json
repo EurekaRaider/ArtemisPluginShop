@@ -11,5 +11,77 @@
     "capabilities": ["Connector", "Read", "Write"],
     "logo": "./assets/icon.png"
   },
-  "version": "0.2.1"
+  "version": "0.2.2",
+  "localizations": {
+    "en": {
+      "displayName": "GitHub",
+      "description": "GitHub through the Artemis connector service.",
+      "shortDescription": "Connect GitHub directly from Artemis."
+    },
+    "zh-CN": {
+      "displayName": "GitHub",
+      "description": "通过 Artemis 连接器服务使用 GitHub。",
+      "shortDescription": "直接在 Artemis 中连接 GitHub。"
+    },
+    "zh-TW": {
+      "displayName": "GitHub",
+      "description": "透過 Artemis 連接器服務使用 GitHub。",
+      "shortDescription": "直接在 Artemis 中連線至 GitHub。"
+    },
+    "ja": {
+      "displayName": "GitHub",
+      "description": "Artemis のコネクターサービスを通じて GitHub を利用します。",
+      "shortDescription": "Artemis から GitHub に直接接続します。"
+    },
+    "ko": {
+      "displayName": "GitHub",
+      "description": "Artemis 커넥터 서비스를 통해 GitHub 서비스를 사용합니다.",
+      "shortDescription": "Artemis에서 GitHub 서비스에 직접 연결합니다."
+    },
+    "es": {
+      "displayName": "GitHub",
+      "description": "Usa GitHub a través del servicio de conectores de Artemis.",
+      "shortDescription": "Conecta con GitHub directamente desde Artemis."
+    },
+    "fr": {
+      "displayName": "GitHub",
+      "description": "Utilisez GitHub via le service de connecteurs Artemis.",
+      "shortDescription": "Connectez-vous à GitHub directement depuis Artemis."
+    },
+    "de": {
+      "displayName": "GitHub",
+      "description": "Nutze GitHub über den Connector-Dienst von Artemis.",
+      "shortDescription": "Verbinde dich direkt aus Artemis mit GitHub."
+    },
+    "pt-BR": {
+      "displayName": "GitHub",
+      "description": "Use GitHub pelo serviço de conectores do Artemis.",
+      "shortDescription": "Conecte-se ao GitHub diretamente pelo Artemis."
+    },
+    "it": {
+      "displayName": "GitHub",
+      "description": "Usa GitHub tramite il servizio di connettori di Artemis.",
+      "shortDescription": "Connettiti a GitHub direttamente da Artemis."
+    },
+    "ru": {
+      "displayName": "GitHub",
+      "description": "Работайте с GitHub через сервис коннекторов Artemis.",
+      "shortDescription": "Подключайтесь к GitHub прямо из Artemis."
+    },
+    "ar": {
+      "displayName": "GitHub",
+      "description": "استخدم GitHub عبر خدمة الموصلات في Artemis.",
+      "shortDescription": "اتصل بخدمة GitHub مباشرةً من Artemis."
+    },
+    "hi": {
+      "displayName": "GitHub",
+      "description": "Artemis की कनेक्टर सेवा के ज़रिए GitHub का उपयोग करें।",
+      "shortDescription": "Artemis से सीधे GitHub से कनेक्ट करें।"
+    },
+    "id": {
+      "displayName": "GitHub",
+      "description": "Gunakan GitHub melalui layanan konektor Artemis.",
+      "shortDescription": "Hubungkan ke GitHub langsung dari Artemis."
+    }
+  }
 }

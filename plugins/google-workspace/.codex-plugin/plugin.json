@@ -1,6 +1,6 @@
 {
   "name": "google-workspace",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Operate Google Drive, Docs, Sheets, Slides, and Calendar resources available to the connected Google account through direct Google APIs.",
   "author": {
     "name": "Artemis contributors",
@@ -34,5 +34,161 @@
     "brandColor": "#4285F4",
     "logo": "./assets/icon.png"
   },
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "localizations": {
+    "en": {
+      "displayName": "Google Workspace",
+      "description": "Operate Google Drive, Docs, Sheets, Slides, and Calendar resources available to the connected Google account through direct Google APIs.",
+      "shortDescription": "Work with accessible Drive and Calendar data.",
+      "longDescription": "Direct Google Drive, Docs, Sheets, Slides, and Calendar tools that follow the connected account's Google permissions, with risk-aware writes.",
+      "defaultPrompt": [
+        "Find a document I can access in Google Drive.",
+        "Append these rows to a Google Sheet I can edit.",
+        "Show my upcoming events from an accessible calendar."
+      ]
+    },
+    "zh-CN": {
+      "displayName": "Google Workspace",
+      "description": "通过 Google API 直接操作已连接 Google 账户有权访问的云端硬盘、文档、表格、幻灯片和日历资源。",
+      "shortDescription": "处理有权访问的云端硬盘和日历数据。",
+      "longDescription": "直接使用 Google 云端硬盘、文档、表格、幻灯片和日历工具，遵循已连接账户的 Google 权限，并按风险处理写入操作。",
+      "defaultPrompt": [
+        "在 Google 云端硬盘中查找我有权访问的文档。",
+        "将这些行追加到我有权编辑的 Google 表格中。",
+        "显示我有权访问的日历中即将到来的活动。"
+      ]
+    },
+    "zh-TW": {
+      "displayName": "Google Workspace",
+      "description": "透過 Google API 直接操作已連線 Google 帳戶有權存取的雲端硬碟、文件、試算表、簡報及日曆資源。",
+      "shortDescription": "處理有權存取的雲端硬碟及日曆資料。",
+      "longDescription": "直接使用 Google 雲端硬碟、文件、試算表、簡報及日曆工具，遵循已連線帳戶的 Google 權限，並依風險處理寫入操作。",
+      "defaultPrompt": [
+        "在 Google 雲端硬碟中尋找我有權存取的文件。",
+        "將這些列新增至我有權編輯的 Google 試算表。",
+        "顯示我有權存取的日曆中即將到來的活動。"
+      ]
+    },
+    "ja": {
+      "displayName": "Google Workspace",
+      "description": "Google API を直接使用して、接続中の Google アカウントがアクセスできるドライブ、ドキュメント、スプレッドシート、スライド、カレンダーのリソースを操作します。",
+      "shortDescription": "アクセス可能なドライブとカレンダーのデータを操作。",
+      "longDescription": "接続中のアカウントの Google 権限に従い、書き込みのリスクを考慮する、Google ドライブ、ドキュメント、スプレッドシート、スライド、カレンダーの直接操作ツールです。",
+      "defaultPrompt": [
+        "Google ドライブで私がアクセスできるドキュメントを探してください。",
+        "私が編集できる Google スプレッドシートにこれらの行を追加してください。",
+        "アクセス可能なカレンダーで今後の予定を表示してください。"
+      ]
+    },
+    "ko": {
+      "displayName": "Google Workspace",
+      "description": "Google API를 직접 사용하여 연결된 Google 계정이 접근할 수 있는 Drive, Docs, Sheets, Slides 및 Calendar 리소스를 다룹니다.",
+      "shortDescription": "접근 가능한 Drive 및 Calendar 데이터를 다룹니다.",
+      "longDescription": "연결된 계정의 Google 권한을 준수하고 쓰기 작업의 위험을 고려하는 Google Drive, Docs, Sheets, Slides 및 Calendar 도구입니다.",
+      "defaultPrompt": [
+        "Google Drive에서 제가 접근할 수 있는 문서를 찾아 주세요.",
+        "제가 편집할 수 있는 Google Sheets에 이 행들을 추가해 주세요.",
+        "접근 가능한 캘린더에서 다가오는 일정을 보여 주세요."
+      ]
+    },
+    "es": {
+      "displayName": "Google Workspace",
+      "description": "Trabaja directamente mediante las API de Google con recursos de Drive, Docs, Sheets, Slides y Calendar a los que tenga acceso la cuenta de Google conectada.",
+      "shortDescription": "Trabaja con datos accesibles de Drive y Calendar.",
+      "longDescription": "Herramientas directas de Google Drive, Docs, Sheets, Slides y Calendar que respetan los permisos de la cuenta conectada y consideran el riesgo de las operaciones de escritura.",
+      "defaultPrompt": [
+        "Busca un documento al que tenga acceso en Google Drive.",
+        "Añade estas filas a una hoja de Google Sheets que pueda editar.",
+        "Muestra mis próximos eventos de un calendario al que tenga acceso."
+      ]
+    },
+    "fr": {
+      "displayName": "Google Workspace",
+      "description": "Utilisez directement les API Google pour gérer les ressources Drive, Docs, Sheets, Slides et Calendar accessibles au compte Google connecté.",
+      "shortDescription": "Travaillez avec les données accessibles de Drive et Calendar.",
+      "longDescription": "Outils directs Google Drive, Docs, Sheets, Slides et Calendar respectant les autorisations du compte connecté et tenant compte des risques des opérations d’écriture.",
+      "defaultPrompt": [
+        "Trouve un document auquel j’ai accès dans Google Drive.",
+        "Ajoute ces lignes à une feuille Google Sheets que je peux modifier.",
+        "Affiche mes prochains événements dans un agenda auquel j’ai accès."
+      ]
+    },
+    "de": {
+      "displayName": "Google Workspace",
+      "description": "Bearbeite über die Google-APIs direkt Ressourcen in Drive, Docs, Sheets, Slides und Calendar, auf die das verbundene Google-Konto zugreifen darf.",
+      "shortDescription": "Mit zugänglichen Drive- und Calendar-Daten arbeiten.",
+      "longDescription": "Direkte Werkzeuge für Google Drive, Docs, Sheets, Slides und Calendar, die die Google-Berechtigungen des verbundenen Kontos beachten und Risiken bei Schreibzugriffen berücksichtigen.",
+      "defaultPrompt": [
+        "Finde in Google Drive ein Dokument, auf das ich zugreifen kann.",
+        "Füge diese Zeilen einer Google-Tabelle hinzu, die ich bearbeiten darf.",
+        "Zeige meine bevorstehenden Termine aus einem zugänglichen Kalender."
+      ]
+    },
+    "pt-BR": {
+      "displayName": "Google Workspace",
+      "description": "Use as APIs do Google diretamente para trabalhar com recursos do Drive, Docs, Sheets, Slides e Calendar acessíveis à conta Google conectada.",
+      "shortDescription": "Trabalhe com dados acessíveis do Drive e Calendar.",
+      "longDescription": "Ferramentas diretas do Google Drive, Docs, Sheets, Slides e Calendar que respeitam as permissões da conta conectada e consideram os riscos das operações de gravação.",
+      "defaultPrompt": [
+        "Encontre no Google Drive um documento ao qual eu tenha acesso.",
+        "Adicione estas linhas a uma planilha do Google que eu possa editar.",
+        "Mostre meus próximos eventos de uma agenda à qual eu tenha acesso."
+      ]
+    },
+    "it": {
+      "displayName": "Google Workspace",
+      "description": "Usa direttamente le API Google per gestire le risorse di Drive, Docs, Sheets, Slides e Calendar accessibili all’account Google collegato.",
+      "shortDescription": "Lavora con i dati accessibili di Drive e Calendar.",
+      "longDescription": "Strumenti diretti per Google Drive, Docs, Sheets, Slides e Calendar che rispettano le autorizzazioni dell’account collegato e considerano i rischi delle operazioni di scrittura.",
+      "defaultPrompt": [
+        "Trova un documento a cui posso accedere in Google Drive.",
+        "Aggiungi queste righe a un foglio Google che posso modificare.",
+        "Mostra i miei prossimi eventi da un calendario a cui posso accedere."
+      ]
+    },
+    "ru": {
+      "displayName": "Google Workspace",
+      "description": "Работайте напрямую через Google API с ресурсами Drive, Docs, Sheets, Slides и Calendar, доступными подключённому аккаунту Google.",
+      "shortDescription": "Работайте с доступными данными Drive и Calendar.",
+      "longDescription": "Прямые инструменты Google Drive, Docs, Sheets, Slides и Calendar, которые соблюдают права подключённого аккаунта и учитывают риски операций записи.",
+      "defaultPrompt": [
+        "Найди в Google Drive документ, к которому у меня есть доступ.",
+        "Добавь эти строки в таблицу Google, которую я могу редактировать.",
+        "Покажи мои предстоящие события из доступного мне календаря."
+      ]
+    },
+    "ar": {
+      "displayName": "Google Workspace",
+      "description": "تعامل مباشرةً عبر واجهات Google API مع موارد Drive وDocs وSheets وSlides وCalendar المتاحة لحساب Google المتصل.",
+      "shortDescription": "تعامل مع بيانات Drive وCalendar التي يمكنك الوصول إليها.",
+      "longDescription": "أدوات مباشرة لخدمات Google Drive وDocs وSheets وSlides وCalendar تلتزم بأذونات الحساب المتصل وتراعي مخاطر عمليات الكتابة.",
+      "defaultPrompt": [
+        "ابحث عن مستند يمكنني الوصول إليه في Google Drive.",
+        "أضف هذه الصفوف إلى جدول بيانات Google يمكنني تعديله.",
+        "اعرض أحداثي القادمة من تقويم يمكنني الوصول إليه."
+      ]
+    },
+    "hi": {
+      "displayName": "Google Workspace",
+      "description": "Google API के ज़रिए सीधे Drive, Docs, Sheets, Slides और Calendar के उन संसाधनों पर काम करें जिन तक कनेक्ट किए गए Google खाते की पहुँच है।",
+      "shortDescription": "पहुँच योग्य Drive और Calendar डेटा पर काम करें।",
+      "longDescription": "Google Drive, Docs, Sheets, Slides और Calendar के सीधे टूल, जो कनेक्ट किए गए खाते की Google अनुमतियों का पालन करते हैं और लिखने की कार्रवाइयों के जोखिम को ध्यान में रखते हैं।",
+      "defaultPrompt": [
+        "Google Drive में ऐसा दस्तावेज़ खोजें जिसे मैं ऐक्सेस कर सकूँ।",
+        "इन पंक्तियों को ऐसी Google शीट में जोड़ें जिसे मैं संपादित कर सकूँ।",
+        "ऐसे कैलेंडर से मेरे आगामी इवेंट दिखाएँ जिसे मैं ऐक्सेस कर सकूँ।"
+      ]
+    },
+    "id": {
+      "displayName": "Google Workspace",
+      "description": "Gunakan Google API secara langsung untuk mengelola sumber daya Drive, Docs, Sheets, Slides, dan Calendar yang dapat diakses oleh akun Google yang terhubung.",
+      "shortDescription": "Kelola data Drive dan Calendar yang dapat diakses.",
+      "longDescription": "Alat langsung Google Drive, Docs, Sheets, Slides, dan Calendar yang mematuhi izin akun terhubung dan mempertimbangkan risiko operasi penulisan.",
+      "defaultPrompt": [
+        "Cari dokumen yang dapat saya akses di Google Drive.",
+        "Tambahkan baris-baris ini ke Google Sheets yang dapat saya edit.",
+        "Tampilkan acara mendatang saya dari kalender yang dapat saya akses."
+      ]
+    }
+  }
 }

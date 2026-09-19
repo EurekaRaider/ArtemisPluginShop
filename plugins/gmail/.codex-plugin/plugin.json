@@ -1,6 +1,6 @@
 {
   "name": "gmail",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Search, read, draft, send, organize, trash, and restore Gmail messages through the direct Gmail API.",
   "author": {
     "name": "Artemis contributors",
@@ -26,5 +26,161 @@
     "brandColor": "#EA4335",
     "logo": "./assets/icon.png"
   },
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "localizations": {
+    "en": {
+      "displayName": "Gmail",
+      "description": "Search, read, draft, send, organize, trash, and restore Gmail messages through the direct Gmail API.",
+      "shortDescription": "Read, draft, send, and organize Gmail.",
+      "longDescription": "Direct Gmail tools for threads, attachments, drafts, sending, labels, archive, trash, and restore without permanent-delete or account-setting access.",
+      "defaultPrompt": [
+        "Summarize important unread email from this week.",
+        "Draft a reply to the latest message in this thread.",
+        "Archive completed threads and apply a label."
+      ]
+    },
+    "zh-CN": {
+      "displayName": "Gmail",
+      "description": "通过 Gmail API 直接搜索、阅读、起草、发送、整理邮件，以及将邮件移至垃圾箱或恢复。",
+      "shortDescription": "阅读、起草、发送和整理 Gmail 邮件。",
+      "longDescription": "直接使用 Gmail 工具处理会话、附件、草稿、发送、标签、归档、垃圾箱和恢复，不提供永久删除或账户设置访问权限。",
+      "defaultPrompt": [
+        "总结本周重要的未读邮件。",
+        "为此会话中的最新邮件起草回复。",
+        "归档已处理的会话并添加标签。"
+      ]
+    },
+    "zh-TW": {
+      "displayName": "Gmail",
+      "description": "透過 Gmail API 直接搜尋、閱讀、撰寫草稿、傳送、整理郵件，以及將郵件移至垃圾桶或還原。",
+      "shortDescription": "閱讀、撰寫草稿、傳送及整理 Gmail 郵件。",
+      "longDescription": "直接使用 Gmail 工具處理對話串、附件、草稿、傳送、標籤、封存、垃圾桶及還原，不提供永久刪除或帳戶設定存取權限。",
+      "defaultPrompt": [
+        "摘要本週重要的未讀郵件。",
+        "為此對話串中的最新郵件草擬回覆。",
+        "封存已處理的對話串並加上標籤。"
+      ]
+    },
+    "ja": {
+      "displayName": "Gmail",
+      "description": "Gmail API を直接使用して、メールの検索、閲覧、下書き、送信、整理、ゴミ箱への移動、復元を行います。",
+      "shortDescription": "Gmail メールの閲覧、下書き、送信、整理。",
+      "longDescription": "スレッド、添付ファイル、下書き、送信、ラベル、アーカイブ、ゴミ箱、復元に対応する Gmail ツールです。完全削除やアカウント設定へのアクセスは含みません。",
+      "defaultPrompt": [
+        "今週の重要な未読メールを要約してください。",
+        "このスレッドの最新メールへの返信を下書きしてください。",
+        "対応済みのスレッドをアーカイブしてラベルを付けてください。"
+      ]
+    },
+    "ko": {
+      "displayName": "Gmail",
+      "description": "Gmail API를 직접 사용하여 메일을 검색, 읽기, 초안 작성, 전송, 정리하고 휴지통으로 이동하거나 복원합니다.",
+      "shortDescription": "Gmail 메일 읽기, 초안 작성, 전송 및 정리.",
+      "longDescription": "대화, 첨부 파일, 초안, 전송, 라벨, 보관, 휴지통 이동 및 복원을 위한 Gmail 도구입니다. 영구 삭제나 계정 설정 접근 권한은 제공하지 않습니다.",
+      "defaultPrompt": [
+        "이번 주의 중요한 읽지 않은 메일을 요약해 주세요.",
+        "이 대화의 최신 메일에 대한 답장 초안을 작성해 주세요.",
+        "처리한 대화를 보관하고 라벨을 적용해 주세요."
+      ]
+    },
+    "es": {
+      "displayName": "Gmail",
+      "description": "Busca, lee, redacta, envía y organiza mensajes de Gmail, muévelos a la papelera y restáuralos mediante la API de Gmail directamente.",
+      "shortDescription": "Lee, redacta, envía y organiza mensajes de Gmail.",
+      "longDescription": "Herramientas directas de Gmail para conversaciones, adjuntos, borradores, envíos, etiquetas, archivo, papelera y restauración, sin acceso al borrado permanente ni a los ajustes de la cuenta.",
+      "defaultPrompt": [
+        "Resume los correos importantes sin leer de esta semana.",
+        "Redacta una respuesta al último mensaje de esta conversación.",
+        "Archiva las conversaciones terminadas y aplica una etiqueta."
+      ]
+    },
+    "fr": {
+      "displayName": "Gmail",
+      "description": "Recherchez, lisez, rédigez, envoyez et organisez des messages Gmail, mettez-les à la corbeille et restaurez-les directement via l’API Gmail.",
+      "shortDescription": "Lisez, rédigez, envoyez et organisez vos messages Gmail.",
+      "longDescription": "Outils Gmail directs pour les conversations, pièces jointes, brouillons, envois, libellés, archives, corbeille et restaurations, sans accès à la suppression définitive ni aux paramètres du compte.",
+      "defaultPrompt": [
+        "Résume les e-mails importants non lus de cette semaine.",
+        "Rédige une réponse au dernier message de cette conversation.",
+        "Archive les conversations terminées et applique un libellé."
+      ]
+    },
+    "de": {
+      "displayName": "Gmail",
+      "description": "Suche, lies, entwirf, sende und organisiere Gmail-Nachrichten direkt über die Gmail-API, verschiebe sie in den Papierkorb und stelle sie wieder her.",
+      "shortDescription": "Gmail-Nachrichten lesen, entwerfen, senden und organisieren.",
+      "longDescription": "Direkte Gmail-Werkzeuge für Unterhaltungen, Anhänge, Entwürfe, Versand, Labels, Archivierung, Papierkorb und Wiederherstellung, ohne endgültiges Löschen oder Zugriff auf Kontoeinstellungen.",
+      "defaultPrompt": [
+        "Fasse die wichtigen ungelesenen E-Mails dieser Woche zusammen.",
+        "Entwirf eine Antwort auf die neueste Nachricht in dieser Unterhaltung.",
+        "Archiviere abgeschlossene Unterhaltungen und füge ein Label hinzu."
+      ]
+    },
+    "pt-BR": {
+      "displayName": "Gmail",
+      "description": "Pesquise, leia, redija, envie e organize mensagens do Gmail, mova-as para a lixeira e restaure-as diretamente pela API do Gmail.",
+      "shortDescription": "Leia, redija, envie e organize mensagens do Gmail.",
+      "longDescription": "Ferramentas diretas do Gmail para conversas, anexos, rascunhos, envio, marcadores, arquivamento, lixeira e restauração, sem exclusão permanente nem acesso às configurações da conta.",
+      "defaultPrompt": [
+        "Resuma os e-mails importantes não lidos desta semana.",
+        "Escreva um rascunho de resposta à mensagem mais recente desta conversa.",
+        "Arquive as conversas concluídas e aplique um marcador."
+      ]
+    },
+    "it": {
+      "displayName": "Gmail",
+      "description": "Cerca, leggi, scrivi, invia e organizza messaggi Gmail, spostali nel cestino e ripristinali direttamente tramite l’API Gmail.",
+      "shortDescription": "Leggi, scrivi, invia e organizza i messaggi Gmail.",
+      "longDescription": "Strumenti Gmail diretti per conversazioni, allegati, bozze, invio, etichette, archiviazione, cestino e ripristino, senza eliminazione definitiva né accesso alle impostazioni dell’account.",
+      "defaultPrompt": [
+        "Riassumi le e-mail importanti non lette di questa settimana.",
+        "Prepara una bozza di risposta all’ultimo messaggio di questa conversazione.",
+        "Archivia le conversazioni concluse e applica un’etichetta."
+      ]
+    },
+    "ru": {
+      "displayName": "Gmail",
+      "description": "Ищите, читайте, составляйте, отправляйте и упорядочивайте письма Gmail, перемещайте их в корзину и восстанавливайте напрямую через Gmail API.",
+      "shortDescription": "Чтение, подготовка, отправка и упорядочивание писем Gmail.",
+      "longDescription": "Прямые инструменты Gmail для цепочек писем, вложений, черновиков, отправки, ярлыков, архивации, корзины и восстановления без безвозвратного удаления и доступа к настройкам аккаунта.",
+      "defaultPrompt": [
+        "Составь сводку важных непрочитанных писем за эту неделю.",
+        "Подготовь черновик ответа на последнее письмо в этой цепочке.",
+        "Архивируй завершённые цепочки писем и добавь ярлык."
+      ]
+    },
+    "ar": {
+      "displayName": "Gmail",
+      "description": "ابحث عن رسائل Gmail واقرأها وأنشئ مسوداتها وأرسلها ونظّمها وانقلها إلى المهملات واستعدها مباشرةً عبر Gmail API.",
+      "shortDescription": "اقرأ رسائل Gmail وأنشئ مسوداتها وأرسلها ونظّمها.",
+      "longDescription": "أدوات Gmail مباشرة للمحادثات والمرفقات والمسودات والإرسال والتصنيفات والأرشفة والمهملات والاستعادة، دون حذف نهائي أو وصول إلى إعدادات الحساب.",
+      "defaultPrompt": [
+        "لخّص الرسائل المهمة غير المقروءة لهذا الأسبوع.",
+        "أنشئ مسودة رد على أحدث رسالة في هذه المحادثة.",
+        "أرشف المحادثات المكتملة وأضف تصنيفًا إليها."
+      ]
+    },
+    "hi": {
+      "displayName": "Gmail",
+      "description": "Gmail API के ज़रिए सीधे संदेश खोजें, पढ़ें, ड्राफ़्ट बनाएँ, भेजें, व्यवस्थित करें, ट्रैश में डालें और पुनर्स्थापित करें।",
+      "shortDescription": "Gmail संदेश पढ़ें, ड्राफ़्ट बनाएँ, भेजें और व्यवस्थित करें।",
+      "longDescription": "बातचीत, अटैचमेंट, ड्राफ़्ट, भेजने, लेबल, संग्रह, ट्रैश और पुनर्स्थापन के लिए सीधे Gmail टूल। स्थायी रूप से मिटाने या खाते की सेटिंग तक पहुँच की अनुमति नहीं है।",
+      "defaultPrompt": [
+        "इस सप्ताह के ज़रूरी अपठित ईमेल का सारांश दें।",
+        "इस बातचीत के सबसे हाल के संदेश का जवाब ड्राफ़्ट करें।",
+        "पूरी हो चुकी बातचीत को संग्रहित करें और एक लेबल लगाएँ।"
+      ]
+    },
+    "id": {
+      "displayName": "Gmail",
+      "description": "Cari, baca, buat draf, kirim, dan atur pesan Gmail, pindahkan ke sampah, serta pulihkan langsung melalui Gmail API.",
+      "shortDescription": "Baca, buat draf, kirim, dan atur pesan Gmail.",
+      "longDescription": "Alat Gmail langsung untuk percakapan, lampiran, draf, pengiriman, label, arsip, sampah, dan pemulihan, tanpa penghapusan permanen atau akses ke pengaturan akun.",
+      "defaultPrompt": [
+        "Ringkas email penting yang belum dibaca minggu ini.",
+        "Buat draf balasan untuk pesan terbaru dalam percakapan ini.",
+        "Arsipkan percakapan yang selesai dan terapkan label."
+      ]
+    }
+  }
 }

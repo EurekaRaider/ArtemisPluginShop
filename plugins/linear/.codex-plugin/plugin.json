@@ -11,5 +11,77 @@
     "capabilities": ["Connector", "Read", "Write"],
     "logo": "./assets/icon.png"
   },
-  "version": "0.2.1"
+  "version": "0.2.2",
+  "localizations": {
+    "en": {
+      "displayName": "Linear",
+      "description": "Linear through the Artemis connector service.",
+      "shortDescription": "Connect Linear directly from Artemis."
+    },
+    "zh-CN": {
+      "displayName": "Linear",
+      "description": "通过 Artemis 连接器服务使用 Linear。",
+      "shortDescription": "直接在 Artemis 中连接 Linear。"
+    },
+    "zh-TW": {
+      "displayName": "Linear",
+      "description": "透過 Artemis 連接器服務使用 Linear。",
+      "shortDescription": "直接在 Artemis 中連線至 Linear。"
+    },
+    "ja": {
+      "displayName": "Linear",
+      "description": "Artemis のコネクターサービスを通じて Linear を利用します。",
+      "shortDescription": "Artemis から Linear に直接接続します。"
+    },
+    "ko": {
+      "displayName": "Linear",
+      "description": "Artemis 커넥터 서비스를 통해 Linear 서비스를 사용합니다.",
+      "shortDescription": "Artemis에서 Linear 서비스에 직접 연결합니다."
+    },
+    "es": {
+      "displayName": "Linear",
+      "description": "Usa Linear a través del servicio de conectores de Artemis.",
+      "shortDescription": "Conecta con Linear directamente desde Artemis."
+    },
+    "fr": {
+      "displayName": "Linear",
+      "description": "Utilisez Linear via le service de connecteurs Artemis.",
+      "shortDescription": "Connectez-vous à Linear directement depuis Artemis."
+    },
+    "de": {
+      "displayName": "Linear",
+      "description": "Nutze Linear über den Connector-Dienst von Artemis.",
+      "shortDescription": "Verbinde dich direkt aus Artemis mit Linear."
+    },
+    "pt-BR": {
+      "displayName": "Linear",
+      "description": "Use Linear pelo serviço de conectores do Artemis.",
+      "shortDescription": "Conecte-se ao Linear diretamente pelo Artemis."
+    },
+    "it": {
+      "displayName": "Linear",
+      "description": "Usa Linear tramite il servizio di connettori di Artemis.",
+      "shortDescription": "Connettiti a Linear direttamente da Artemis."
+    },
+    "ru": {
+      "displayName": "Linear",
+      "description": "Работайте с Linear через сервис коннекторов Artemis.",
+      "shortDescription": "Подключайтесь к Linear прямо из Artemis."
+    },
+    "ar": {
+      "displayName": "Linear",
+      "description": "استخدم Linear عبر خدمة الموصلات في Artemis.",
+      "shortDescription": "اتصل بخدمة Linear مباشرةً من Artemis."
+    },
+    "hi": {
+      "displayName": "Linear",
+      "description": "Artemis की कनेक्टर सेवा के ज़रिए Linear का उपयोग करें।",
+      "shortDescription": "Artemis से सीधे Linear से कनेक्ट करें।"
+    },
+    "id": {
+      "displayName": "Linear",
+      "description": "Gunakan Linear melalui layanan konektor Artemis.",
+      "shortDescription": "Hubungkan ke Linear langsung dari Artemis."
+    }
+  }
 }

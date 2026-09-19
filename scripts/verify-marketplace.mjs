@@ -5,6 +5,7 @@ import {
 import { createPublicKey, verify } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { verifyPluginLocalizations } from "./plugin-localizations.mjs";
 
 import {
   canonicalJson,
@@ -81,6 +82,7 @@ for (const entry of marketplace.plugins) {
   );
   if (manifest.name !== entry.name)
     throw new Error(`Plugin name mismatch for ${entry.name}.`);
+  verifyPluginLocalizations(manifest);
   const mcp = JSON.parse(
     await readFile(resolve(pluginRoot, ".mcp.json"), "utf8"),
   );

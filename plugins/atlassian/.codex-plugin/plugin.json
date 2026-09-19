@@ -11,5 +11,77 @@
     "capabilities": ["Connector", "Read", "Write"],
     "logo": "./assets/icon.png"
   },
-  "version": "0.2.1"
+  "version": "0.2.2",
+  "localizations": {
+    "en": {
+      "displayName": "Jira & Confluence",
+      "description": "Jira & Confluence through the Artemis connector service.",
+      "shortDescription": "Connect Jira & Confluence directly from Artemis."
+    },
+    "zh-CN": {
+      "displayName": "Jira & Confluence",
+      "description": "通过 Artemis 连接器服务使用 Jira & Confluence。",
+      "shortDescription": "直接在 Artemis 中连接 Jira & Confluence。"
+    },
+    "zh-TW": {
+      "displayName": "Jira & Confluence",
+      "description": "透過 Artemis 連接器服務使用 Jira & Confluence。",
+      "shortDescription": "直接在 Artemis 中連線至 Jira & Confluence。"
+    },
+    "ja": {
+      "displayName": "Jira & Confluence",
+      "description": "Artemis のコネクターサービスを通じて Jira & Confluence を利用します。",
+      "shortDescription": "Artemis から Jira & Confluence に直接接続します。"
+    },
+    "ko": {
+      "displayName": "Jira & Confluence",
+      "description": "Artemis 커넥터 서비스를 통해 Jira & Confluence 서비스를 사용합니다.",
+      "shortDescription": "Artemis에서 Jira & Confluence 서비스에 직접 연결합니다."
+    },
+    "es": {
+      "displayName": "Jira & Confluence",
+      "description": "Usa Jira & Confluence a través del servicio de conectores de Artemis.",
+      "shortDescription": "Conecta con Jira & Confluence directamente desde Artemis."
+    },
+    "fr": {
+      "displayName": "Jira & Confluence",
+      "description": "Utilisez Jira & Confluence via le service de connecteurs Artemis.",
+      "shortDescription": "Connectez-vous à Jira & Confluence directement depuis Artemis."
+    },
+    "de": {
+      "displayName": "Jira & Confluence",
+      "description": "Nutze Jira & Confluence über den Connector-Dienst von Artemis.",
+      "shortDescription": "Verbinde dich direkt aus Artemis mit Jira & Confluence."
+    },
+    "pt-BR": {
+      "displayName": "Jira & Confluence",
+      "description": "Use Jira & Confluence pelo serviço de conectores do Artemis.",
+      "shortDescription": "Conecte-se ao Jira & Confluence diretamente pelo Artemis."
+    },
+    "it": {
+      "displayName": "Jira & Confluence",
+      "description": "Usa Jira & Confluence tramite il servizio di connettori di Artemis.",
+      "shortDescription": "Connettiti a Jira & Confluence direttamente da Artemis."
+    },
+    "ru": {
+      "displayName": "Jira & Confluence",
+      "description": "Работайте с Jira & Confluence через сервис коннекторов Artemis.",
+      "shortDescription": "Подключайтесь к Jira & Confluence прямо из Artemis."
+    },
+    "ar": {
+      "displayName": "Jira & Confluence",
+      "description": "استخدم Jira & Confluence عبر خدمة الموصلات في Artemis.",
+      "shortDescription": "اتصل بخدمة Jira & Confluence مباشرةً من Artemis."
+    },
+    "hi": {
+      "displayName": "Jira & Confluence",
+      "description": "Artemis की कनेक्टर सेवा के ज़रिए Jira & Confluence का उपयोग करें।",
+      "shortDescription": "Artemis से सीधे Jira & Confluence से कनेक्ट करें।"
+    },
+    "id": {
+      "displayName": "Jira & Confluence",
+      "description": "Gunakan Jira & Confluence melalui layanan konektor Artemis.",
+      "shortDescription": "Hubungkan ke Jira & Confluence langsung dari Artemis."
+    }
+  }
 }

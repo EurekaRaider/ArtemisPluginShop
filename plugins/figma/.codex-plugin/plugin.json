@@ -11,5 +11,77 @@
     "capabilities": ["Connector", "Read"],
     "logo": "./assets/icon.png"
   },
-  "version": "0.2.1"
+  "version": "0.2.2",
+  "localizations": {
+    "en": {
+      "displayName": "Figma Desktop",
+      "description": "Figma Desktop through the Artemis connector service.",
+      "shortDescription": "Connect Figma Desktop directly from Artemis."
+    },
+    "zh-CN": {
+      "displayName": "Figma 桌面端",
+      "description": "通过 Artemis 连接器服务使用 Figma 桌面端。",
+      "shortDescription": "直接在 Artemis 中连接 Figma 桌面端。"
+    },
+    "zh-TW": {
+      "displayName": "Figma 桌面版",
+      "description": "透過 Artemis 連接器服務使用 Figma 桌面版。",
+      "shortDescription": "直接在 Artemis 中連線至 Figma 桌面版。"
+    },
+    "ja": {
+      "displayName": "Figma デスクトップ",
+      "description": "Artemis のコネクターサービスを通じて Figma デスクトップ を利用します。",
+      "shortDescription": "Artemis から Figma デスクトップ に直接接続します。"
+    },
+    "ko": {
+      "displayName": "Figma 데스크톱",
+      "description": "Artemis 커넥터 서비스를 통해 Figma 데스크톱 서비스를 사용합니다.",
+      "shortDescription": "Artemis에서 Figma 데스크톱 서비스에 직접 연결합니다."
+    },
+    "es": {
+      "displayName": "Figma de escritorio",
+      "description": "Usa Figma de escritorio a través del servicio de conectores de Artemis.",
+      "shortDescription": "Conecta con Figma de escritorio directamente desde Artemis."
+    },
+    "fr": {
+      "displayName": "Figma pour ordinateur",
+      "description": "Utilisez Figma pour ordinateur via le service de connecteurs Artemis.",
+      "shortDescription": "Connectez-vous à Figma pour ordinateur directement depuis Artemis."
+    },
+    "de": {
+      "displayName": "Figma Desktop",
+      "description": "Nutze Figma Desktop über den Connector-Dienst von Artemis.",
+      "shortDescription": "Verbinde dich direkt aus Artemis mit Figma Desktop."
+    },
+    "pt-BR": {
+      "displayName": "Figma para desktop",
+      "description": "Use Figma para desktop pelo serviço de conectores do Artemis.",
+      "shortDescription": "Conecte-se ao Figma para desktop diretamente pelo Artemis."
+    },
+    "it": {
+      "displayName": "Figma desktop",
+      "description": "Usa Figma desktop tramite il servizio di connettori di Artemis.",
+      "shortDescription": "Connettiti a Figma desktop direttamente da Artemis."
+    },
+    "ru": {
+      "displayName": "Figma для компьютера",
+      "description": "Работайте с Figma для компьютера через сервис коннекторов Artemis.",
+      "shortDescription": "Подключайтесь к Figma для компьютера прямо из Artemis."
+    },
+    "ar": {
+      "displayName": "Figma لسطح المكتب",
+      "description": "استخدم Figma لسطح المكتب عبر خدمة الموصلات في Artemis.",
+      "shortDescription": "اتصل بخدمة Figma لسطح المكتب مباشرةً من Artemis."
+    },
+    "hi": {
+      "displayName": "Figma डेस्कटॉप",
+      "description": "Artemis की कनेक्टर सेवा के ज़रिए Figma डेस्कटॉप का उपयोग करें।",
+      "shortDescription": "Artemis से सीधे Figma डेस्कटॉप से कनेक्ट करें।"
+    },
+    "id": {
+      "displayName": "Figma Desktop",
+      "description": "Gunakan Figma Desktop melalui layanan konektor Artemis.",
+      "shortDescription": "Hubungkan ke Figma Desktop langsung dari Artemis."
+    }
+  }
 }

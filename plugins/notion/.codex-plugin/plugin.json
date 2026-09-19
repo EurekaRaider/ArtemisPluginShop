@@ -11,5 +11,77 @@
     "capabilities": ["Connector", "Read", "Write"],
     "logo": "./assets/icon.png"
   },
-  "version": "0.2.1"
+  "version": "0.2.2",
+  "localizations": {
+    "en": {
+      "displayName": "Notion",
+      "description": "Notion through the Artemis connector service.",
+      "shortDescription": "Connect Notion directly from Artemis."
+    },
+    "zh-CN": {
+      "displayName": "Notion",
+      "description": "通过 Artemis 连接器服务使用 Notion。",
+      "shortDescription": "直接在 Artemis 中连接 Notion。"
+    },
+    "zh-TW": {
+      "displayName": "Notion",
+      "description": "透過 Artemis 連接器服務使用 Notion。",
+      "shortDescription": "直接在 Artemis 中連線至 Notion。"
+    },
+    "ja": {
+      "displayName": "Notion",
+      "description": "Artemis のコネクターサービスを通じて Notion を利用します。",
+      "shortDescription": "Artemis から Notion に直接接続します。"
+    },
+    "ko": {
+      "displayName": "Notion",
+      "description": "Artemis 커넥터 서비스를 통해 Notion 서비스를 사용합니다.",
+      "shortDescription": "Artemis에서 Notion 서비스에 직접 연결합니다."
+    },
+    "es": {
+      "displayName": "Notion",
+      "description": "Usa Notion a través del servicio de conectores de Artemis.",
+      "shortDescription": "Conecta con Notion directamente desde Artemis."
+    },
+    "fr": {
+      "displayName": "Notion",
+      "description": "Utilisez Notion via le service de connecteurs Artemis.",
+      "shortDescription": "Connectez-vous à Notion directement depuis Artemis."
+    },
+    "de": {
+      "displayName": "Notion",
+      "description": "Nutze Notion über den Connector-Dienst von Artemis.",
+      "shortDescription": "Verbinde dich direkt aus Artemis mit Notion."
+    },
+    "pt-BR": {
+      "displayName": "Notion",
+      "description": "Use Notion pelo serviço de conectores do Artemis.",
+      "shortDescription": "Conecte-se ao Notion diretamente pelo Artemis."
+    },
+    "it": {
+      "displayName": "Notion",
+      "description": "Usa Notion tramite il servizio di connettori di Artemis.",
+      "shortDescription": "Connettiti a Notion direttamente da Artemis."
+    },
+    "ru": {
+      "displayName": "Notion",
+      "description": "Работайте с Notion через сервис коннекторов Artemis.",
+      "shortDescription": "Подключайтесь к Notion прямо из Artemis."
+    },
+    "ar": {
+      "displayName": "Notion",
+      "description": "استخدم Notion عبر خدمة الموصلات في Artemis.",
+      "shortDescription": "اتصل بخدمة Notion مباشرةً من Artemis."
+    },
+    "hi": {
+      "displayName": "Notion",
+      "description": "Artemis की कनेक्टर सेवा के ज़रिए Notion का उपयोग करें।",
+      "shortDescription": "Artemis से सीधे Notion से कनेक्ट करें।"
+    },
+    "id": {
+      "displayName": "Notion",
+      "description": "Gunakan Notion melalui layanan konektor Artemis.",
+      "shortDescription": "Hubungkan ke Notion langsung dari Artemis."
+    }
+  }
 }

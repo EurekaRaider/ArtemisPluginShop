@@ -1,6 +1,6 @@
 {
   "name": "artemis-plugin-shop",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "Signed local and official MCP connectors for Artemis.",
   "repository": {

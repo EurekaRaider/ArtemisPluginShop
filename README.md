@@ -64,6 +64,26 @@ Pi remains the only agent loop. Host approval and sandbox checks apply to tools;
 Plan/Review cannot execute them. Cancelled approval must not send a write. An
 uncertain send must be checked in the mailbox before an explicit retry.
 
+## Languages
+
+All ten plugins include display names and descriptions in the same 14 languages
+as Artemis: `en`, `zh-CN`, `zh-TW`, `ja`, `ko`, `es`, `fr`, `de`, `pt-BR`, `it`,
+`ru`, `ar`, `hi`, and `id`. Detailed descriptions and suggested prompts are also
+translated where declared. Product names and connector identifiers stay stable.
+
+The manifest's top-level `localizations` object maps each locale to
+`displayName`, `description`, `shortDescription`, and optional `longDescription`
+and `defaultPrompt` values. Artemis retains this data through installation and
+selects text using its resolved interface language, including Follow System.
+Changing the language updates cards, plugin management, search and open connection
+dialogs immediately. No separate plugin language setting is needed.
+
+Use an Artemis build with plugin-localization support and update already installed
+plugins once to load the new metadata. Older hosts continue to show the base
+English text. Missing third-party translations fall back to English and then to
+the original manifest fields. Package verification requires complete translations
+for this marketplace; the translations are covered by the package signature.
+
 ## Build and verify
 
 Node 24 and npm 11+ are development dependencies, not user prerequisites.

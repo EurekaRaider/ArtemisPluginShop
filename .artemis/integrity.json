@@ -5,19 +5,19 @@
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-09-18T14:38:07.458Z",
+  "signedAt": "2026-09-19T09:59:18.406Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
     {
       "name": "atlassian",
-      "version": "0.2.1",
-      "contentHash": "4324c670c29351b6135b8eb0b6ee46c4baa43e4a59e645728012d2ff7e8414bf",
-      "size": 2859,
+      "version": "0.2.2",
+      "contentHash": "3ae95176e057498cd6ddcf526c68aa370372e47f07d0feab1d3d6a39df54063a",
+      "size": 6374,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 455,
-          "sha256": "7632a83d2c5096f91437a6edcd5f3ae662898ada77e1da9661c61621838d813e"
+          "size": 3970,
+          "sha256": "499f26971b70772adedfbeda846ce1e2f6e8d12dec2b5fab1d736e109de8528e"
         },
         {
           "path": ".mcp.json",
@@ -38,14 +38,14 @@
     },
     {
       "name": "figma",
-      "version": "0.2.1",
-      "contentHash": "cbe3713631f7d59c00b6ab1f42ff91afaa3bf9acb7551e34bb5585c07efd2532",
-      "size": 5379,
+      "version": "0.2.2",
+      "contentHash": "99e4c119b894aa55e93626d990b01c17314a21c3440df3c05617ba67c0ac848a",
+      "size": 8996,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 424,
-          "sha256": "e90b7b635ce028ef216b643842fb65f8c200de2bc44b70d1aabc11b54b865074"
+          "size": 4041,
+          "sha256": "63642b4886905e242a452e14af6487799d868a9e7740f2766f6bd21e7b83d747"
         },
         {
           "path": ".mcp.json",
@@ -66,14 +66,14 @@
     },
     {
       "name": "github",
-      "version": "0.2.1",
-      "contentHash": "1c5204b7bb60f258445d858af45d391a215c12a996498464e29a1c70a92d7731",
-      "size": 34841,
+      "version": "0.2.2",
+      "contentHash": "1fb27959d9ac665eaaa45f425bb6685d63c017e75ee69e5c34a6c5cd080693d5",
+      "size": 37894,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 418,
-          "sha256": "c1cd280db5fbe134acae82de2b28be72e5a01b7f8813473ef9b01cfdd1f9f2ce"
+          "size": 3471,
+          "sha256": "7168b0a9b8af5b61b2e9ae962f0063e85042bdb72e9e21a4bfdd82495e28ef11"
         },
         {
           "path": ".mcp.json",
@@ -94,14 +94,14 @@
     },
     {
       "name": "gmail",
-      "version": "0.2.0",
-      "contentHash": "84a60fec688109a100e2074fab0e0cbb8ad75370288c5a35def9564ffe750e9c",
-      "size": 1091783,
+      "version": "0.2.1",
+      "contentHash": "6283c43d6bb6fe6c071b0d4cd5a845052399c29eb3359bb0bbd2540cb0640222",
+      "size": 1103562,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 1246,
-          "sha256": "b2d33c2dcb402b40ed1cc81580d137cbb37112d0acba816bdb800568a10869be"
+          "size": 13025,
+          "sha256": "8d25a9689d65b34fcc081fdd3a4a8e57f6b107b00974fe7e71900541cf00204e"
         },
         {
           "path": ".mcp.json",
@@ -132,14 +132,14 @@
     },
     {
       "name": "google-workspace",
-      "version": "0.2.0",
-      "contentHash": "545c01d5eb62935ebc78e98bfe41a0ef47a20e05cd3447f0fe1c47a2af96e179",
-      "size": 1091596,
+      "version": "0.2.1",
+      "contentHash": "92b1a90581d220d37954b4fae98742e3f468d8cbb3e9728948edb1e1e593d8e3",
+      "size": 1103574,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 1366,
-          "sha256": "f258b9fd25af337ae6cfe68faadba3a3f95f14c9c40445612ef7c13015ce388a"
+          "size": 13344,
+          "sha256": "6864082560a15587062325c01c86f0811cd3fa24f569c7c738a92d5c72dbe022"
         },
         {
           "path": ".mcp.json",
@@ -170,14 +170,14 @@
     },
     {
       "name": "linear",
-      "version": "0.2.1",
-      "contentHash": "074c7339d2c943f934913bc33cd9f493856af9f314a6f38841e137885636e384",
-      "size": 26814,
+      "version": "0.2.2",
+      "contentHash": "1f936fc4a6e0da0d2f3e4146731a960b3d1582b18d7447586ae7016ee9ce751c",
+      "size": 29867,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 419,
-          "sha256": "3a7ded54260abd84afc19486def64bf11932a070549f703d1da8ee6c4b10c6fe"
+          "size": 3472,
+          "sha256": "4e6f652e9fafefb89ecdd2398ef90e00561ca1da039e84cd865482a4556b61da"
         },
         {
           "path": ".mcp.json",
@@ -198,14 +198,14 @@
     },
     {
       "name": "notion",
-      "version": "0.2.1",
-      "contentHash": "48921406623fb197a32f352cc11e2cca163e44b1768be78f06a4bfcefbb14f79",
-      "size": 9618,
+      "version": "0.2.2",
+      "contentHash": "29e8765a460082026af89a22727db008ea98554c0d1d16c085ce3d2aba953fa7",
+      "size": 12671,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 419,
-          "sha256": "092998f32a0035d8bc6f588cb9e1c7b29138e6b2c82e6e8e9bbadbcd78ce647d"
+          "size": 3472,
+          "sha256": "44b302d93ca170e61c1bd9f4a8f2e18a99945edc1911a07d0b3966cdddc0b192"
         },
         {
           "path": ".mcp.json",
@@ -226,14 +226,14 @@
     },
     {
       "name": "outlook",
-      "version": "0.2.1",
-      "contentHash": "2a562ffc0df6b709dfee4b1436fa94cc0f3aca184d606d24fcbd44759b14419b",
-      "size": 1075001,
+      "version": "0.2.2",
+      "contentHash": "db9c9cba708a4e0a28cad44cd1586425c2aa1686d9e0bea242e51e290901f2a5",
+      "size": 1078096,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 424,
-          "sha256": "816adf11c6e77f68403cc70bb48eb2bf41c0e46276559d06b5710dcde1b51725"
+          "size": 3519,
+          "sha256": "7b1671cd33ec241e24a298abdb840508bce3efd6d39a393860baefe8b7cd0ec4"
         },
         {
           "path": ".mcp.json",
@@ -259,14 +259,14 @@
     },
     {
       "name": "qq-mail",
-      "version": "0.2.1",
-      "contentHash": "0e2256c71c0eb19bc93a9b0c6aa58d3e283ece549e8f58b2768c2ddb62b0b13e",
-      "size": 3911014,
+      "version": "0.2.2",
+      "contentHash": "1595850692ec334503201ed41ab9b8803b6d39efd8cdc1803098fdcca1db8bed",
+      "size": 3914217,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 424,
-          "sha256": "2833f4b87c787cfb08eff09d5f80ec706f27a2c1b8c6c6eb6b6719ed1d4468d6"
+          "size": 3627,
+          "sha256": "67c9e77d12c20c29aa7079668c78374cfc594a60ed1f6d409ab3aa72eaee0e49"
         },
         {
           "path": ".mcp.json",
@@ -292,14 +292,14 @@
     },
     {
       "name": "slack",
-      "version": "0.2.1",
-      "contentHash": "fbd7b19ebbbec505bb05b8888f0c01530597dc9769476d9c0268641972e46134",
-      "size": 13224,
+      "version": "0.2.2",
+      "contentHash": "3dd5ab49eedefe0fe605455b952a421558c191c142a5d55d5746e9c5ad639877",
+      "size": 16235,
       "files": [
         {
           "path": ".codex-plugin/plugin.json",
-          "size": 416,
-          "sha256": "9585b50898f47af37ec9d889aae9e07d3607a7e49ee7115b377a4c525256a45e"
+          "size": 3427,
+          "sha256": "867a147b817b725ce628ddd001eb8a2f2c239713fd1c0e61ab90d45a33e7c96a"
         },
         {
           "path": ".mcp.json",
@@ -319,5 +319,5 @@
       ]
     }
   ],
-  "signature": "xDVIhnSxUP1WG75licL70JhcGd6TGbFoFvJRMiDnX6ArFJlFhIuYDuSSpSlMT/3ejdCMoCZfO9T8xEPRx64cCw=="
+  "signature": "hoGKPUj5lFs8R21dNuXtnQBSeylGKeltqiKDzCxuNe6FwtCfsK2CKCXeuM10Ca8w7Jlby3ovAm7lwuQUBroPCA=="
 }
