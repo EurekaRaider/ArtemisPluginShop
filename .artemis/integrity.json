@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "marketplaceName": "artemis-plugin-shop",
-  "marketplaceHash": "e79671c76a2b04148d5b9b0f92ce031d402742d06b4f509f755d09ff2b20aee1",
+  "marketplaceHash": "d5ce2a339e1a251f1d761fd72fa86b39c4cd0ed0e5cb8e9a6f1c47a489aaf3da",
   "signatureAlgorithm": "Ed25519",
   "publicKey": "MCowBQYDK2VwAyEA1Lu3YNC54PjZ3VqFwN8/PYElFu1rLqz7Mvyn1/ZxxQI=",
   "signingKeyFingerprint": "cfb9da883241fb32dc7e6bf9ddd6748593edd71809969cb6842fad5644b6b247",
-  "signedAt": "2026-09-19T12:14:45.799Z",
+  "signedAt": "2026-09-19T12:16:07.907Z",
   "sourceUrl": "https://github.com/williamjinj-eng/ArtemisPluginShop.git",
   "plugins": [
     {
@@ -141,62 +141,6 @@
       ]
     },
     {
-      "name": "linear",
-      "version": "0.2.2",
-      "contentHash": "1f936fc4a6e0da0d2f3e4146731a960b3d1582b18d7447586ae7016ee9ce751c",
-      "size": 29867,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3472,
-          "sha256": "4e6f652e9fafefb89ecdd2398ef90e00561ca1da039e84cd865482a4556b61da"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 500,
-          "sha256": "2f3a7b56f3729326b22e34b0a1494e43440db2aec851ed3012fb10781307e614"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 25274,
-          "sha256": "3d22d53907820245ec1724a4954d3e180b70f21b2552697986b3f141a6730ef7"
-        },
-        {
-          "path": "skills/linear/SKILL.md",
-          "size": 621,
-          "sha256": "7bfad2e4a7ddf2f8796831a8270285ac1068aafa596605d13cf667967d88a906"
-        }
-      ]
-    },
-    {
-      "name": "notion",
-      "version": "0.2.2",
-      "contentHash": "29e8765a460082026af89a22727db008ea98554c0d1d16c085ce3d2aba953fa7",
-      "size": 12671,
-      "files": [
-        {
-          "path": ".codex-plugin/plugin.json",
-          "size": 3472,
-          "sha256": "44b302d93ca170e61c1bd9f4a8f2e18a99945edc1911a07d0b3966cdddc0b192"
-        },
-        {
-          "path": ".mcp.json",
-          "size": 500,
-          "sha256": "2132bfb1bb7e2f5c08eeaeac7de559bc9f033e48e6d0d3287d8c2e4e7e6525d3"
-        },
-        {
-          "path": "assets/icon.png",
-          "size": 8078,
-          "sha256": "483846a85e43e22879445047b83b22033e70fcc25ab34809ebadb7f856507ee0"
-        },
-        {
-          "path": "skills/notion/SKILL.md",
-          "size": 621,
-          "sha256": "153b4efc90b5c1fc5112c89efc0dad194027706709353c69e70680ed78d8cab5"
-        }
-      ]
-    },
-    {
       "name": "qq-mail",
       "version": "0.2.2",
       "contentHash": "1595850692ec334503201ed41ab9b8803b6d39efd8cdc1803098fdcca1db8bed",
@@ -230,5 +174,5 @@
       ]
     }
   ],
-  "signature": "lYFfKgdTOl/JNGF1QetIabnm42NZ1ZBNxFBvvEIOEoO/Oy0IajLyAtP2Mjc4VCBF3/OzGZo22vI0HvcmUgStDw=="
+  "signature": "jfy/68gYctShB+pu/OSidTIZAjuOevvx1Ch0N7/tn5QnyDR+Ci+FpBQ6N/oGFfnKq9+0BBiMh0gv1mS0RF5zCw=="
 }

@@ -12,8 +12,6 @@ Docker or user-created developer project is required.
 | QQ Mail          | Bundled IMAP/SMTP MCP | Search/read, attachments, drafts, send, read/unread and safe move           |
 | GitHub           | Official remote MCP   | Tools provided by the approved GitHub MCP service                           |
 | Figma            | Official desktop MCP  | Design context, screenshots and metadata exposed by the running desktop app |
-| Notion           | Official remote MCP   | Tools exposed by the admitted official service                              |
-| Linear           | Official remote MCP   | Tools exposed by the admitted official service                              |
 
 Remote services are release candidates until publisher/client admission and
 controlled-account acceptance are recorded. This repository's local builds do
@@ -61,7 +59,7 @@ uncertain send must be checked in the mailbox before an explicit retry.
 
 ## Languages
 
-All seven listed plugins include display names and descriptions in the same 14 languages
+All five listed plugins include display names and descriptions in the same 14 languages
 as Artemis: `en`, `zh-CN`, `zh-TW`, `ja`, `ko`, `es`, `fr`, `de`, `pt-BR`, `it`,
 `ru`, `ar`, `hi`, and `id`. Detailed descriptions and suggested prompts are also
 translated where declared. Product names and connector identifiers stay stable.
